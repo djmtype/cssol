@@ -1,0 +1,19 @@
+:root {
+  --space-ratio: 1.25;
+
+  --base-space-size: clamp(1rem, calc(0.91rem + 0.42vw), 1.25rem);
+
+  --space-3xs: calc(var(--space-2xs) / var(--space-ratio));
+  --space-2xs: calc(var(--space-xs) / var(--space-ratio));
+  --space-xs: calc(var(--base-space-size) / var(--space-ratio));
+
+  --space-sm: var(--base-space-size);
+  --space-md: calc(var(--space-sm) * var(--space-ratio));
+  --space-lg: calc(var(--space-md) * var(--space-ratio));
+  --space-xl: calc(var(--space-lg) * var(--space-ratio));
+  --space-2xl: calc(var(--space-xl) * var(--space-ratio));
+  --space-3xl: calc(var(--space-2xl) * var(--space-ratio));
+  --space-4xl: calc(var(--space-3xl) * var(--space-ratio));
+
+  --gutter: var(--gutter-width, var(--space-sm));
+}

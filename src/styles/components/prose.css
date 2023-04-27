@@ -1,0 +1,26 @@
+.prose {
+  --flow-space: var(--space-lg-xl);
+  --wrapper-max-width: 55rem;
+}
+
+.prose :is(h2, h3, h4) + * {
+  --flow-space: var(--space-sm-md);
+}
+
+.prose blockquote {
+  border-inline-start: 10px solid var(--color-secondary);
+  padding: var(--space-md-lg);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--font-size-md);
+}
+
+.prose blockquote > * + * {
+  margin-top: var(--space-md-lg);
+}
+
+.prose blockquote :last-child {
+  font-family: var(--font-base);
+  font-style: normal;
+  font-size: var(--font-size-sm);
+}

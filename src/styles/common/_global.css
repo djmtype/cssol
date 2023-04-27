@@ -1,0 +1,174 @@
+body {
+  color: var(--text-color);
+  background-color: var(--surface-color);
+}
+
+
+
+body, h1, h2, h3, h4, p {
+	font-size: var(--font-size);
+}
+
+body {
+	--font-size: var(--font-size-sm);
+}
+
+h1 {
+  --font-size: var(--font-size-3xl);
+}
+
+
+h2 {
+  --font-size: var(--font-size-2xl);
+}
+
+h3 {
+  --font-size: var(--font-size-xl);
+
+}
+
+h4 {
+  --font-size: var(--font-size-lg);
+
+}
+
+p {
+	--font-size: var(--font-size-sm);
+	max-inline-size: var(--line-length-md);
+}
+
+h1, h2, h3 {
+	line-height: var(--line-height-heading);
+}
+
+
+a {
+  color: var(--primary-color);
+  text-underline-offset: 0.125em;
+  word-break: break-word;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--primary-color-hover);
+  text-decoration: none;
+}
+
+
+/* For "real-world" usage, you do not need to scope
+these custom properties */
+:is(a, button, input, textarea, summary) {
+  /* Using max() ensures at least a value of 2px, 
+  while allowing the possibility of scaling 
+  relative to the component */
+  --outline-size: max(2px, 0.08em);
+  --outline-style: solid;
+  --outline-color: currentColor;
+}
+
+/* Base :focus styles for fallback purposes */
+:is(a, button, input, textarea, summary):focus {
+  outline: var(--outline-size) var(--outline-style) var(--outline-color);
+  outline-offset: var(--outline-offset, var(--outline-size));
+}
+
+/* Final :focus-visible styles */
+:is(a, button, input, textarea):focus-visible {
+  outline: var(--outline-size) var(--outline-style) var(--outline-color);
+  outline-offset: var(--outline-offset, var(--outline-size));
+}
+
+/* Remove base :focus styles when :focus-visible is available */
+:is(a, button, input, textarea):focus:not(:focus-visible) {
+  outline: none;
+}
+
+main:focus {
+  outline: none;
+}
+
+:where(button, input[type="submit"]) {
+  cursor: pointer;
+}
+
+:target {
+  scroll-margin-top: 1ex;
+}
+
+::selection {
+  background: var(--primary-color);
+  color: var(--text-color-invert);
+}
+
+mark {
+  color: var(--mark-text-color);
+  background-color: var(--mark-surface-color);
+  padding: 0.125em 0.25em;
+  vertical-align: baseline;
+}
+
+del {
+  color: var(--alarm-text-color);
+}
+
+u {
+  text-underline-offset: 0.125em;
+  text-decoration-style: double;
+  text-decoration-thickness: var(--border-size-1);
+  text-decoration-color: var(--text-color-muted);
+}
+
+abbr {
+  text-underline-offset: 0.125em;
+  text-decoration-color: var(--text-color-muted);
+  cursor: help;
+}
+
+kbd {
+  font-family: var(--font-family-mono);
+  background-color: var(--surface-color-muted);
+  color: var(--text-color-invert);
+  padding: 0.125em 0.25em;
+  vertical-align: baseline;
+  border-radius: .125em;
+  font-size: var(--font-size-smaller);
+  font-weight: var(--font-weight-bold);
+}
+
+ins {
+  color: var(--success-text-color);
+  text-underline-offset: 0.125em;
+}
+
+
+:where(h1, h2, h3, h4) small {
+	font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-smaller);
+}
+
+
+
+blockquote:not([class]) {
+	padding: var(--space-lg);
+}
+
+
+blockquote:not([class]) p:last-of-type {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+}
+
+sub, sup {
+  position: relative;
+  font-size: .75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}

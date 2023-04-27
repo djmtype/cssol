@@ -11,5 +11,16 @@
   },
   "dependencies": {
     "astro": "^2.3.0"
-  }
+  },
+  "devDependencies": {
+    "postcss": "^8.4.23",
+    "postcss-preset-env": "^8.3.2",
+    "prettier-plugin-astro": "^0.8.0"
+  },
+  "browserslist": [
+    "last 2 safari versions",
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "> 2% in US"
+  ]
 }
