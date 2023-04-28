@@ -2,40 +2,8 @@
   --grid-max-width: 80rem;
 }
 
-body > header > *:not(nav, nav > *) {
-  font-size: var(--font-size-xl);
-  font-weight: bold;
-}
-
-body > header {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gutter);
-  justify-content: space-between;
-  padding-block: var(--gutter);
-  max-width: var(--wrapper-max-width, var(--grid-max-width));
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-  position: relative;
-  align-items: center;
-}
-
-nav ul {
-  display: flex;
-}
-
-nav a {
-  padding: var(--space-sm);
-}
-
 main {
   padding-block: var(--space-3xl);
-}
-
-body > footer {
-  padding: var(--space-md) var(--gutter);
-  color: var(--text-color-muted);
-  text-align: center;
 }
 
 section {
@@ -49,14 +17,28 @@ main > * + * {
   margin-top: var(--space-2xl);
 }
 
-
-
 article {
+  --grid: auto min(100%, 65ch) auto;
   display: grid;
-  grid-template-columns: auto min(100%, 65ch) auto;
+  grid-template-columns: var(--grid);
   max-width: var(--wrapper-max-width, var(--grid-max-width));
   margin-inline: auto;
   padding-inline: var(--gutter);
+}
+
+main:has(article + article) {
+  --grid-max-width: calc(65ch + var(--space-xl) * 2);
+  max-width: var(--wrapper-max-width, var(--grid-max-width));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+main:has(article + article) article {
+  --grid: 0 min(100%, 65ch) 0;
+  background-color: var(--surface-color-glare);
+  padding: var(--space-2xl) var(--space-xl);
+
+
 }
 
 article > * {
@@ -67,20 +49,15 @@ main:not(:has(article + article)) header + figure {
   grid-column: 1/-1;
 }
 
-main:has(article + article) article + article {
- border-top: var(--border-size-1) solid var(--separator-color);
- margin-top: var(--space-3xl);
- padding-top: var(--space-3xl);
-}
+/* article + article {
+  border-top: var(--border-size-1) solid var(--separator-color);
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-3xl);
+} */
 
 article > * + * {
   margin-top: var(--flow-space, 1em);
 }
-
-/* hgroup {
-	border-bottom: var(--border-size-1) solid var(--separator-color);
-	padding-block-end: var(--space-lg);
-} */
 
 article hgroup > * + * {
   margin-top: var(--space-xs);
@@ -96,9 +73,7 @@ article hgroup small {
   display: inline-block;
 }
 
-figure {
-  aspect-ratio: 16/6;
-}
+
 figure img {
   height: 100%;
   width: 100%;
@@ -106,11 +81,8 @@ figure img {
 }
 
 * + img,
-img + * {
+* + figure,
+img + *,
+figure + * {
   margin-top: var(--space-xl);
-}
-
-figure + *,
-* + figure {
-  margin-top: var(--space-2xl);
 }

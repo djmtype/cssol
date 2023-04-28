@@ -1,6 +1,6 @@
 @import 'common/_reset.css';
 
-@import 'variables/_queries.css';
+
 @import 'variables/_colors.css';
 @import 'variables/_schemes.css';
 @import 'variables/_typography.css';
@@ -10,7 +10,7 @@
 
 @import 'common/_global.css';
 
-
+@import '_frame.css';
 @import '_base.css';
 
 
