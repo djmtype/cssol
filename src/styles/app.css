@@ -8,10 +8,15 @@
 @import 'variables/_borders.css';
 
 
-@import 'common/_global.css';
+@import 'elements/_global.css';
 
-@import '_frame.css';
-@import '_base.css';
+@import 'elements/_typography.css';
+@import 'elements/_focus.css';
+@import 'elements/_button.css';
+@import 'elements/_table.css';
+
+
+@import 'layout/_base.css';
 
 
 

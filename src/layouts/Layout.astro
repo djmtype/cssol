@@ -1,5 +1,7 @@
 ---
 import "@styles/app.css"
+
+const { pathname } = Astro.url;
 ---
 
 <html lang="en">
@@ -25,10 +27,26 @@ import "@styles/app.css"
       </nav>
     </header>
     <main id="main-content">
+
+      {pathname === '/single' && (
+
+        <section>
+          <nav aria-label="breadcrumb">
+            <ul role="list">
+              <li><a href="/">Home</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a aria-current="page" href="/single">The Post Title Goes Here</a></li>
+            </ul>
+          </nav>
+        </section>
+
+      )
+    }
+
       <slot />
     </main>
     <footer>
-			<small>&copy; Copyright Notice 2023 for Blah</small>
+			<small>{new Date().getFullYear()} &copy; CSSol</small>
 		</footer>
   </body>
 </html>

@@ -8,6 +8,8 @@
   --type-ratio: 1.25;
 
 	--base-font-size: clamp(1.00rem, calc(0.91rem + 0.42vw), 1.25rem);
+	
+	--font-size-xs: calc(var(--base-font-size) / var(--type-ratio));
 
   --font-size-sm: var(--base-font-size);
   --font-size-md: calc(var(--font-size-sm) * var(--type-ratio));

@@ -1,6 +1,7 @@
 
 const postcssPresetEnv = require("postcss-preset-env");
 
+
 module.exports = {
   plugins: [
     postcssPresetEnv({
@@ -14,6 +15,7 @@ module.exports = {
         "focus-within-pseudo-class": false,
         "focus-visible-pseudo-class": false,
         "color-functional-notation": false,
+        // "has-pseudo-class": false
         // 'lab-function': {
         //   preserve: false,
         //   enableProgressiveCustomProperties: false,
@@ -27,6 +29,7 @@ module.exports = {
       },
       // autoprefixer: true,
     }),
+
     
     // postcssJitProps(OpenProps),
   ],

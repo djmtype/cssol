@@ -1,0 +1,46 @@
+figure:has(table) {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+:where(table) {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+thead {
+  border-bottom: var(--border-size-2) solid var(--separator-color);
+}
+
+:where(thead th:not([align="center"]):not([align="right"])) {
+  text-align: start;
+}
+
+th {
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-color);
+}
+
+tbody tr {
+  border-top: var(--border-size-1) solid var(--separator-color);
+}
+
+:where(th, td) {
+
+  padding: calc(var(--space-xs) / 2) var(--space-xs);
+  
+  font-feature-settings: "tnum";
+}
+
+tfoot {
+  border-top: var(--border-size-2) solid var(--separator-color);
+  border-bottom: var(--border-size-1) solid var(--separator-color);
+}
+
+table tbody tr:nth-child(even) {
+  background-color: var(--surface-color-glare);
+}

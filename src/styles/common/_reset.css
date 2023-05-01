@@ -38,6 +38,7 @@ a:not([class]) {
 :where(img, picture) {
   max-width: 100%;
   display: block;
+  height: auto;
 }
 
 /* Sometimes svgs can display an awkward gap */
