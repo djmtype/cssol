@@ -1,0 +1,41 @@
+---
+import BreadcrumbNav from "@components/BreadcrumbNav.astro"
+
+import Post from "@components/Post.astro"
+import { formatDate } from "@utilities/index"
+import Layout from "@layouts/Layout.astro"
+
+import { getCollection, CollectionEntry } from "astro:content"
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog")
+  return posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+    props: {
+      post,
+    },
+  }))
+}
+
+type Props = {
+  post: CollectionEntry<"blog">
+}
+
+const { pathname } = Astro.url
+
+
+const { post } = Astro.props as Props
+
+// const { Content } = await post.render()
+---
+
+<Layout title={post.data.title}>
+
+	{pathname.startsWith("/blog/") && <BreadcrumbNav post={post} />}
+
+  <section>
+		<Post post={post} />
+  </section>
+</Layout>

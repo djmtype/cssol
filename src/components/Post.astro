@@ -1,0 +1,63 @@
+---
+
+import Headline from "@components/Headline.astro"
+import { CollectionEntry } from "astro:content"
+import { formatDate, removeTrailingSlash } from "@utilities/index"
+
+type Props = {
+  post: CollectionEntry<"blog">
+}
+
+
+// const blogPathRegex = '/^\/blog$/';
+const currentPath = Astro.request.url;
+
+
+// console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
+
+// const day = new Date();
+// const today = day.toLocaleDateString("en-US", {day:'numeric', month:'long', year:"numeric"});
+// console.log(today);
+
+const { pathname, href } = Astro.url
+
+const { post } = Astro.props as Props
+const { Content } = await post.render()
+
+
+
+
+---
+
+<article>
+  <header>
+    <hgroup>
+			<Headline level={pathname.startsWith(`/blog/${post.slug}`) ? "h1" : "h2"}>
+				{post.data.title}
+			</Headline>
+      <p>
+        <timedate>{formatDate(post.data.date, "long")}</timedate>
+      </p>
+    </hgroup>
+  </header>
+
+  <figure>
+    <img
+      src={post.data.image.src}
+      alt={post.data.image.alt}
+      width={post.data.image.width}
+      height={post.data.image.height}
+    />
+  </figure>
+
+  {
+    removeTrailingSlash(pathname) === `/blog` && (
+      <>
+        <p set:html={post.data.description} />
+        <a href={"/blog/" + post.slug}>Read More &rarr;</a>
+      </>
+    )
+  }
+
+  {pathname.startsWith(`/blog/${post.slug}`) && <Content />}
+</article>

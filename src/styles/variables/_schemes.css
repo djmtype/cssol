@@ -1,5 +1,3 @@
-
-
 :root {
   --warning-text-color: #ca8a04;
   --alarm-text-color: #b91c1c;
@@ -29,7 +27,6 @@
 
 :root {
   @media (prefers-color-scheme: dark) {
-
     --warning-text-color: #fde047;
     --alarm-text-color: #f87171;
     --success-text-color: #6ee7b7;
@@ -37,7 +34,7 @@
     --warning-surface-color: #fde047;
     --alarm-surface-color: #f87171;
     --success-surface-color: #6ee7b7;
-    
+
     --primary-color: var(--color-indigo-300);
     --primary-color-hover: var(--color-indigo-200);
 
@@ -52,7 +49,7 @@
     --text-color-invert: var(--color-neutral-900);
     --surface-color-invert: var(--color-neutral-100);
 
-  --mark-text-color: var(--text-color-invert);
-  --mark-surface-color: var(--warning-surface-color);
+    --mark-text-color: var(--text-color-invert);
+    --mark-surface-color: var(--warning-surface-color);
   }
 }

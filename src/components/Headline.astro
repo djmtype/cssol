@@ -1,0 +1,17 @@
+---
+import { slugify } from "@utilities/index"
+
+type Props = {
+  level: "h1" | "h2" | "h3" | "h4"
+  title?: any
+  idTitle?: boolean
+  anchorLink?: boolean
+}
+
+const { level, idTitle, title, anchorLink } = Astro.props as Props
+
+let HL = `${level}`
+---
+
+<HL {...(title && idTitle ? { id: slugify(title) } : {})}><slot />{anchorLink ? <a href={"#" + slugify(title)} /> : null}
+</HL>

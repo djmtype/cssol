@@ -15,5 +15,5 @@
   --space-3xl: calc(var(--space-2xl) * var(--space-ratio));
   --space-4xl: calc(var(--space-3xl) * var(--space-ratio));
 
-  --gutter: var(--gutter-width, var(--space-sm));
+  --gutter: var(--gutter-width, var(--space-md));
 }

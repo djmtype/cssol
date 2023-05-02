@@ -31,6 +31,7 @@ p {
 
 h1, h2, h3 {
 	line-height: var(--line-height-heading);
+	text-wrap: balance;
 }
 
 :where(h1, h2, h3, h4) small {
@@ -40,11 +41,13 @@ h1, h2, h3 {
 
 
 blockquote:not([class]) {
-	padding-inline: var(--space-lg);
+	padding-inline-start: calc(var(--item-inline-start) - var(--border-size-4));
   border-left: var(--border-size-4) solid var(--primary-color);
 }
 
-
+:where(ul, ol):not([role="list"]) {
+	padding-inline-start: var(--item-inline-start);
+}
 
 blockquote:not([class]) cite {
   font-size: var(--font-size-smaller);
@@ -137,4 +140,6 @@ pre {
 pre, code {
   font-family: var(--font-family-mono);
 }
+
+
 

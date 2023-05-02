@@ -1,7 +1,13 @@
 ---
 import "@styles/app.css"
 
-const { pathname } = Astro.url;
+
+type Props = {
+  title: string
+}
+
+const { pathname } = Astro.url
+const { title } = Astro.props as Props
 ---
 
 <html lang="en">
@@ -13,7 +19,7 @@ const { pathname } = Astro.url;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
 
-    <title>Astro</title>
+    <title>{title}</title>
   </head>
   <body>
     <header>
@@ -21,32 +27,19 @@ const { pathname } = Astro.url;
       <nav>
         <ul role="list">
           <li><a href="/">Home</a></li>
-          <li><a href="/single">Single</a></li>
+          <li><a href="/blog">Blog Example</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
     </header>
     <main id="main-content">
-
-      {pathname === '/single' && (
-
-        <section>
-          <nav aria-label="breadcrumb">
-            <ul role="list">
-              <li><a href="/">Home</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a aria-current="page" href="/single">The Post Title Goes Here</a></li>
-            </ul>
-          </nav>
-        </section>
-
-      )
-    }
+      <!-- Breadcrumb -->
+     
 
       <slot />
     </main>
     <footer>
-			<small>{new Date().getFullYear()} &copy; CSSol</small>
-		</footer>
+      <small>{new Date().getFullYear()} &copy; CSSol</small>
+    </footer>
   </body>
 </html>

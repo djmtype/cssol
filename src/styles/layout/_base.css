@@ -4,17 +4,23 @@ html {
 
 /* outside layout */
 
+body {
+  display: flex;
+  flex-direction: column;
+  }
+
 body > header {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gutter);
   justify-content: space-between;
   padding-block: var(--gutter);
-  max-width: var(--section-width);
+  width: min(100%, var(--section-width));
   margin-inline: auto;
   padding-inline: var(--gutter);
   position: relative;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 body > header > *:not(nav, nav > *) {
@@ -29,10 +35,12 @@ body > main {
 
 body > header > nav ul {
   display: flex;
+  flex-wrap: wrap;
 }
 
 body > header > nav a {
-  padding: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  display: inline-flex;
 }
 
 
@@ -41,18 +49,36 @@ main > * + * {
   margin-top: var(--flow-space, var(--space-3xl));
 }
 
+nav[aria-label="breadcrumb"] {
+  width: min(100%, var(--section-width));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  overflow-x: auto;
+}
+
 nav[aria-label="breadcrumb"] ul {
   display: flex;
 }
 
+nav[aria-label="breadcrumb"] li {
+min-width: max-content;
+}
+
+nav[aria-label="breadcrumb"] li:first-child {
+  /* subtract the inline padding from the `a` tag */
+  margin-left: calc(-1 * var(--space-xs));
+}
+
 nav[aria-label="breadcrumb"] a {
   padding: var(--space-sm) var(--space-xs);
+  display: inline-block;
 }
 
 nav[aria-label="breadcrumb"] a[aria-current="page"] {
   text-decoration: none;
   cursor: default;
   color: currentColor;
+  
 }
 
 nav[aria-label="breadcrumb"] li:not(:last-child)::after {
@@ -64,7 +90,12 @@ body > footer {
   padding: var(--space-md) var(--gutter);
   color: var(--text-color-muted);
   text-align: center;
+  margin-block-start: auto;
+  margin-block-end: 0;
 }
+
+
+
 
 /* inner layout */
 
@@ -87,18 +118,24 @@ section article {
   --section-width: min(100%, var(--line-length-md));
   --grid-columns: auto min(100%, var(--line-length-md)) auto;
   display: grid;
+  grid-template-columns: var(--grid-columns);
   max-width: var(--section-width);
   margin-inline: auto;
   background-color: var(--surface-color-glare);
   padding: var(--space-2xl) var(--space-xl);
+  
 }
+
 
 section article:only-child {
   --section-width: 100%;
-  grid-template-columns: var(--grid-columns);
+  
   background-color: unset;
   padding: unset;
 }
+
+
+
 
 
 
@@ -124,8 +161,8 @@ article hgroup > * + * {
   margin-top: var(--space-xs);
 }
 
-article hgroup > *:not(h1) {
-  --font-size: var(--font-size-sm);
+article hgroup > *:not(h1, h2, h3, h4) {
+  /* --font-size: var(--font-size-sm); */
   font-weight: var(--font-weight-normal);
   color: var(--text-color-muted);
 }
@@ -157,3 +194,39 @@ article :where(h1, h2, h3) {
 article :where(h4, p, li, dt, dd) {
   max-inline-size: var(--line-length-md);
 }
+
+
+article :where(ul, ol):has(li input[type='checkbox']) {
+  list-style-type: none;
+  padding-inline-start: calc(var(--item-inline-start) / 3);
+}
+
+
+
+main > section:only-child {
+  min-height: 50dvh;
+  display: grid;
+  place-content: center;
+  background-color: var(--surface-color-glare);
+
+}
+
+main > section:only-child article {
+ text-align: center;
+  }
+
+main > section:only-child h1 {
+font-weight: 800;
+--font-size: 120px;
+line-height: .8;
+}
+
+main > section:only-child h1 span:first-child {
+  font-weight: 400;
+  opacity: .6;
+  }
+
+  main > section:only-child h1 span:last-child {
+    font-weight: 600;
+    opacity: .8;
+    }

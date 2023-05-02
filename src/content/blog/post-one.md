@@ -1,13 +1,13 @@
 ---
-title: "The Post Title Goes Here"
-date: 2023-04-29 11:35:11
+title: "Post One Has an Extremely Long Title for Some Reason"
+date: 2023-04-29
 description: "Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium quia facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab modi laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla animi nemo ea."
 image:
   src: "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1664&q=80"
   width: 1664
   height: 1264
   alt: "A wallpaper of a 3D liquid abstract of indigo and orange hues"
-layout: "../layouts/Single.astro"
+status: published
 ---
 
 ## Typography 

@@ -30,4 +30,6 @@
 	--font-weight-normal: 400;
 	--font-weight-bold: 700;
 
+	--item-inline-start: var(--space-xl);
+
 }

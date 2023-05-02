@@ -1,0 +1,21 @@
+---
+import { CollectionEntry } from "astro:content"
+
+
+
+type Props = {
+  post: CollectionEntry<"blog">
+}
+
+const { post } = Astro.props as Props
+
+---
+
+
+	<nav aria-label="breadcrumb">
+		<ul role="list">
+			<li><a href="/">Home</a></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a aria-current="page" href=`/blog/${post.slug}`>{post.data.title}</a></li>
+		</ul>
+	</nav>
