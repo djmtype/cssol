@@ -1,3 +1,10 @@
+:where(html) {
+  accent-color: var(--primary-color);
+  
+}
+
+
+
 body {
   color: var(--text-color);
   background-color: var(--surface-color);
@@ -20,3 +27,5 @@ body {
   border-block-start-style: var(--hr-style, solid);
   border-block-start-color:  var(--hr-color, var(--separator-color));
 }
+
+

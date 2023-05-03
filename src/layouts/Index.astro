@@ -1,0 +1,84 @@
+---
+import Layout from "@layouts/Layout.astro"
+---
+
+<Layout>
+<slot />
+	
+</Layout>
+
+
+
+<style>
+  section:only-child {
+  min-height: 50dvh;
+  display: grid;
+  place-content: center;
+  /* background-color: var(--surface-color-glare); */
+}
+
+section:only-child article {
+  text-align: center;
+}
+
+section:only-child h1 {
+  color: var(--primary-color);
+  font-weight: 800;
+  --font-size: 7.5rem;
+  line-height: 0.8;
+}
+
+section:only-child h1 span:first-child {
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+section:only-child h1 span:last-child {
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+section:only-child h2 {
+  color: var(--primary-color);
+}
+
+section:only-child header p {
+  --font-size: var(--font-size-md);
+  margin-top: var(--space-lg);
+}
+
+section:only-child header + p {
+  --flow-space: var(--space-xl);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  
+}
+
+section:only-child p > a {
+  display: inline-flex;
+  border: var(--border-size-1) solid currentColor;
+  text-align: center;
+  padding: var(--space-3xs) var(--space-sm);
+  text-decoration: none;
+  border-radius: var(--border-radius-rounded);
+  font-weight: var(--font-weight-bold);
+
+}
+
+section:only-child p > a:first-child {
+  background-color: var(--primary-color);
+  color: var(--surface-color);
+  
+  &:hover, &:focus-visible {
+    background-color: var(--primary-color-hover);
+  }
+}
+
+section:only-child pre {
+  display: inline-flex;
+  justify-self: center;
+  --flow-space: var(--space-xl);
+}
+</style>

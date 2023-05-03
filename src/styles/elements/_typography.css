@@ -136,7 +136,13 @@ sub {
 pre {
   padding: var(--space-xs) var(--space-sm);
   background: var(--surface-color-glare);
+  border-radius: var(--border-radius-rounded);
+  font-size: var(--font-size-smaller);
+  
+  max-width: 100%;
+  overflow-x: auto;
 }
+
 pre, code {
   font-family: var(--font-family-mono);
 }

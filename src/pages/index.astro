@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro"
-
+import Logo from "@components/Logo.astro"
 ---
 
 <Layout title="CSSol">
@@ -8,12 +8,102 @@ import Layout from "@layouts/Layout.astro"
     <article>
       <header>
         <hgroup>
-          <h1><span>C</span><span>S</span>Sol</h1>
-          <p>CSS without too much FUSS</p>
+          <h1>
+            <Logo />
+          </h1>
+          <!-- <h1><span>F</span><span>U</span>CSS</h1>
+          <h2>| fəks |</h2> -->
+          <p><em>CSS without the FUSS</em></p>
         </hgroup>
       </header>
+      <p><a href="#0">Get Started</a> <a href="#0">Download</a></p>
+
+      <pre>npm install @djmtype/fucss</pre>
+
+      <!-- <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@djmtype/css/fucss.min.css&quot;&gt;</code></pre> -->
     </article>
   </section>
-
-
 </Layout>
+
+<style>
+  :global(main) {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section article:only-child {
+    text-align: center;
+  }
+
+  section h1 {
+    /* color: var(--primary-color-hover); */
+    font-weight: 800;
+    --font-size: clamp(5rem, 10vw + 1rem, 7.5rem);
+    line-height: 0.8;
+  }
+
+  section h1 span:first-child {
+    color: var(--primary-color-hover);
+    font-weight: 600;
+
+  }
+
+  section h1 span:last-child {
+    color: var(--primary-color-hover);
+    font-weight: 600;
+
+  }
+
+  section h2 {
+    color: var(--primary-color);
+  }
+
+  section header {
+    overflow: hidden;
+  }
+
+  section header p {
+    --font-size: var(--font-size-md);
+    margin-top: var(--space-lg);
+  }
+
+  section header + p {
+    --flow-space: var(--space-xl);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+  }
+
+  section p > a {
+    display: inline-flex;
+    border: var(--border-size-1) solid currentColor;
+    text-align: center;
+    padding: var(--space-3xs) var(--space-sm);
+    text-decoration: none;
+    border-radius: var(--border-radius-rounded);
+    font-weight: var(--font-weight-bold);
+  }
+
+  section p > a:first-child {
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--primary-color-hover);
+    }
+  }
+
+  section pre {
+    display: inline-flex;
+    justify-self: center;
+    --flow-space: var(--space-xl);
+  }
+
+
+
+
+</style>
