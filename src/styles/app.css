@@ -1,6 +1,18 @@
+@charset "UTF-8";
+/*!
+ * CSSol v0.5.10 (https://cssol.netlify.app)
+ * Copyright 2023 - Licensed under MIT
+ */
+/**
+ * Theme: default
+ */
+ 
+ 
 @import 'common/_reset.css';
 
 
+
+ 
 @import 'variables/_colors.css';
 @import 'variables/_schemes.css';
 @import 'variables/_typography.css';

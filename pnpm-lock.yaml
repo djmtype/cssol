@@ -4,12 +4,21 @@ dependencies:
   astro:
     specifier: ^2.3.0
     version: 2.3.0
+  cssnano-preset-lite:
+    specifier: ^3.0.0
+    version: 3.0.0(postcss@8.4.23)
+  fs:
+    specifier: 0.0.1-security
+    version: 0.0.1-security
   postcss-combine-duplicated-selectors:
     specifier: ^10.0.3
     version: 10.0.3(postcss@8.4.23)
   postcss-import:
     specifier: ^15.1.0
     version: 15.1.0(postcss@8.4.23)
+  prettier:
+    specifier: ^2.8.8
+    version: 2.8.8
   remark-unwrap-images:
     specifier: ^3.0.1
     version: 3.0.1
@@ -1538,6 +1547,19 @@ packages:
       postcss-unique-selectors: 6.0.0(postcss@8.4.23)
     dev: true
 
+  /cssnano-preset-lite@3.0.0(postcss@8.4.23):
+    resolution: {integrity: sha512-De6qjkM/QJUXOGv9nsP8/CajHC4mvvtRmvBLYL51AzqLHpYbegW3EJzZHYmxAPzaaMPtdJ5GEXmAUbBorcTqBQ==}
+    engines: {node: ^14 || ^16 || >=18.0}
+    peerDependencies:
+      postcss: ^8.2.15
+    dependencies:
+      cssnano-utils: 4.0.0(postcss@8.4.23)
+      postcss: 8.4.23
+      postcss-discard-comments: 6.0.0(postcss@8.4.23)
+      postcss-discard-empty: 6.0.0(postcss@8.4.23)
+      postcss-normalize-whitespace: 6.0.0(postcss@8.4.23)
+    dev: false
+
   /cssnano-utils@4.0.0(postcss@8.4.23):
     resolution: {integrity: sha512-Z39TLP+1E0KUcd7LGyF4qMfu8ZufI0rDzhdyAMsa/8UyNUU8wpS0fhdBxbQbv32r64ea00h4878gommRVg2BHw==}
     engines: {node: ^14 || ^16 || >=18.0}
@@ -1545,7 +1567,6 @@ packages:
       postcss: ^8.2.15
     dependencies:
       postcss: 8.4.23
-    dev: true
 
   /cssnano@6.0.1(postcss@8.4.23):
     resolution: {integrity: sha512-fVO1JdJ0LSdIGJq68eIxOqFpIJrZqXUsBt8fkrBcztCQqAjQD51OhZp7tc0ImcbwXD4k7ny84QTV90nZhmqbkg==}
@@ -1833,6 +1854,10 @@ packages:
       jsonfile: 6.1.0
       universalify: 2.0.0
     dev: true
+
+  /fs@0.0.1-security:
+    resolution: {integrity: sha512-3XY9e1pP0CVEUCdj5BmfIZxRBTSDycnbqhIOGec9QYtmVH2fbLpj86CFWkrNOkt/Fvty4KZG5lTglL9j/gJ87w==}
+    dev: false
 
   /fsevents@2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
@@ -3020,7 +3045,6 @@ packages:
       postcss: ^8.2.15
     dependencies:
       postcss: 8.4.23
-    dev: true
 
   /postcss-discard-duplicates@6.0.0(postcss@8.4.23):
     resolution: {integrity: sha512-bU1SXIizMLtDW4oSsi5C/xHKbhLlhek/0/yCnoMQany9k3nPBq+Ctsv/9oMmyqbR96HYHxZcHyK2HR5P/mqoGA==}
@@ -3038,7 +3062,6 @@ packages:
       postcss: ^8.2.15
     dependencies:
       postcss: 8.4.23
-    dev: true
 
   /postcss-discard-overridden@6.0.0(postcss@8.4.23):
     resolution: {integrity: sha512-4VELwssYXDFigPYAZ8vL4yX4mUepF/oCBeeIT4OXsJPYOtvJumyz9WflmJWTfDwCUcpDR+z0zvCWBXgTx35SVw==}
@@ -3334,7 +3357,6 @@ packages:
     dependencies:
       postcss: 8.4.23
       postcss-value-parser: 4.2.0
-    dev: true
 
   /postcss-opacity-percentage@2.0.0(postcss@8.4.23):
     resolution: {integrity: sha512-lyDrCOtntq5Y1JZpBFzIWm2wG9kbEdujpNt4NLannF+J9c8CgFIzPa80YQfdza+Y+yFfzbYj/rfoOsYsooUWTQ==}

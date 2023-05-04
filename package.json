@@ -3,18 +3,20 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "build:css": "postcss src/styles/app.css --config postcss.config.cjs --output build/sol.min.css",
+    "build:css": "NODE_ENV=development postcss src/styles/app.css --config compile/postcss.config.cjs --output build/sol.css && prettier --write build/sol.css",
+    "build:cssprod": "NODE_ENV=production postcss src/styles/app.css --config compile/postcss.config.cjs --output build/sol.min.css",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && npm run build:css",
+    "build": "astro build && npm run build:css && npm run build:cssprod",
     "preview": "astro preview",
     "astro": "astro"
-
   },
   "dependencies": {
     "astro": "^2.3.0",
+    "cssnano-preset-lite": "^3.0.0",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-import": "^15.1.0",
+    "prettier": "^2.8.8",
     "remark-unwrap-images": "^3.0.1"
   },
   "devDependencies": {
