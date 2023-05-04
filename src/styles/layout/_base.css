@@ -40,6 +40,7 @@ body > header > nav ul {
 body > header > nav a {
   padding: var(--space-xs) var(--space-sm);
   display: inline-flex;
+  font-weight: var(--font-weight-bold);
 }
 
 main > * + * {
