@@ -3,17 +3,22 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "build:css": "postcss src/styles/app.css --config postcss.config.cjs --output build/sol.min.css",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npm run build:css",
     "preview": "astro preview",
     "astro": "astro"
+
   },
   "dependencies": {
     "astro": "^2.3.0",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-import": "^15.1.0",
     "remark-unwrap-images": "^3.0.1"
   },
   "devDependencies": {
+    "cssnano": "^6.0.1",
     "postcss": "^8.4.23",
     "postcss-cli": "^10.1.0",
     "postcss-preset-env": "^8.3.2",
@@ -23,6 +28,6 @@
     "last 2 safari versions",
     "last 2 chrome versions",
     "last 2 firefox versions",
-    "> 2% in US"
+    "> 1% in US"
   ]
 }
