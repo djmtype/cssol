@@ -24,7 +24,7 @@ body > header {
 }
 
 body > header > *:not(nav, nav > *) {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
 }
 
 body > main {
@@ -48,6 +48,7 @@ main > * + * {
 }
 
 nav[aria-label="breadcrumb"] {
+  --outline-size: max(2px, 0.08em);
   width: min(100%, var(--section-width));
   margin-inline: auto;
   padding-inline: var(--gutter);
@@ -56,20 +57,23 @@ nav[aria-label="breadcrumb"] {
 
 nav[aria-label="breadcrumb"] ul {
   display: flex;
+  padding: var(--outline-size);
 }
 
 nav[aria-label="breadcrumb"] li {
   min-width: max-content;
+  padding: var(--outline-size);
+
 }
 
 nav[aria-label="breadcrumb"] li:first-child {
-  /* subtract the inline padding from the `a` tag */
   margin-left: calc(-1 * var(--space-xs));
 }
 
 nav[aria-label="breadcrumb"] a {
-  padding: var(--space-sm) var(--space-xs);
+  padding: var(--space-xs);
   display: inline-block;
+
 }
 
 nav[aria-label="breadcrumb"] a[aria-current="page"] {
@@ -79,8 +83,10 @@ nav[aria-label="breadcrumb"] a[aria-current="page"] {
 }
 
 nav[aria-label="breadcrumb"] li:not(:last-child)::after {
-  content: "/";
+  content: "\0002F";
   color: var(--separator-color);
+  z-index: -1;
+  position: relative;
 }
 
 body > footer {

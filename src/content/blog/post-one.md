@@ -76,3 +76,74 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem repellat minima
 | col 3 is | right-aligned |    $1 |
 
 </figure>
+
+<details>
+      <summary>Summary</summary>
+      <h2>How the World Began</h2>
+      <p>
+        Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium
+        quia facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab
+        modi laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla
+        animi nemo ea.
+      </p>
+      <p>
+        Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium
+        quia facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab
+        modi laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla
+        animi nemo ea.
+      </p>
+    </details>
+
+## Forms
+
+<form>
+  <p><strong>This is just a test form. It doesn't do anything.</strong></p>
+
+  <p><select>
+    <option selected="selected" value="1">Title</option>
+    <option value="2">Mr</option>
+    <option value="3">Miss</option>
+    <option value="4">Mrs</option>
+    <option value="5">Other</option>
+  </select></p>
+
+  <p>
+  <label>First name</label>
+  <input type="text" name="first_name">
+  </p>
+
+  <p>
+  <label>Surname</label>
+  <input type="text" name="surname">
+  </p>
+
+  <p>
+  <label>Email</label>
+  <input type="email" name="email" required="">
+  </p>
+
+  <p>
+  <label>Enquiry type:</label>
+  <label><input checked="checked" name="type" type="radio" value="sales" /> Sales</label> 
+  <label><input name="type" type="radio" value="support" /> Support</label> 
+  <label><input name="type" type="radio" value="billing" /> Billing</label>
+  </p>
+
+<hr />
+  <p>
+  <label>Message</label>
+  <textarea rows="6"></textarea>
+  </p>
+
+  <p>
+  <label>
+  <input type="checkbox" id="checkbox" value="terms">
+  <span>I agree to the <a href="#">terms and conditions</a></span>
+  </label>
+  </p>
+
+  <button>Send</button>
+  <button type="reset">Reset</button>
+  <button disabled="disabled">Disabled</button>
+</form>
+

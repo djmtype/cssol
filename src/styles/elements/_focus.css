@@ -16,13 +16,13 @@ these custom properties */
 }
 
 /* Final :focus-visible styles */
-:is(a, button, input, textarea):focus-visible {
+:is(a, button, input, textarea, summary):focus-visible {
   outline: var(--outline-size) var(--outline-style) var(--outline-color);
   outline-offset: var(--outline-offset, var(--outline-size));
 }
 
 /* Remove base :focus styles when :focus-visible is available */
-:is(a, button, input, textarea):focus:not(:focus-visible) {
+:is(a, button, input, textarea, summary):focus:not(:focus-visible) {
   outline: none;
 }
 

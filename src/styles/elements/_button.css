@@ -1,3 +1,38 @@
-:where(button, input[type="submit"]) {
-  cursor: pointer;
+
+:where(button, input[type="submit"], a[role="button"]) {
+  display: inline-flex;
+  padding: var(--space-3xs);
+  border-radius: var(--border-radius-rounded);
+  border-width: var(--border-size-1);
+  appearance: none;
 }
+
+:where(button, input[type="submit"], a[role="button"]):not([class]) {
+  padding: var(--space-3xs) var(--space-md);
+}
+
+
+
+
+button:not([class]),
+input[type="submit"]:not([class]) {
+  
+  background-color: var(--primary-color, buttonface);
+  border-color: var(--primary-color, buttonborder);
+  color: var(--text-color-invert);
+}
+
+button:not([class]):not([disabled]),
+input[type="submit"]:not([class]):not([disabled]) {
+  &:hover,
+  &:focus-visible {
+    --outline-color: var(--primary-color-hover);
+    background-color: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
+  }
+}
+
+
+
+
+

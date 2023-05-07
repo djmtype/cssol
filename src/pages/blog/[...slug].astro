@@ -25,17 +25,17 @@ type Props = {
 
 const { pathname } = Astro.url
 
-
 const { post } = Astro.props as Props
 
 // const { Content } = await post.render()
 ---
 
 <Layout title={post.data.title}>
+  {pathname.startsWith("/blog/") && <BreadcrumbNav post={post} />}
 
-	{pathname.startsWith("/blog/") && <BreadcrumbNav post={post} />}
+
 
   <section>
-		<Post post={post} />
+    <Post post={post} />
   </section>
 </Layout>

@@ -49,6 +49,10 @@ blockquote:not([class]) {
 	padding-inline-start: var(--item-inline-start);
 }
 
+:where(ul, ol):not([role="list"]) li::marker {
+	color: var(--primary-color, currentColor);
+}
+
 blockquote:not([class]) cite {
   font-size: var(--font-size-smaller);
   font-weight: var(--font-weight-normal);

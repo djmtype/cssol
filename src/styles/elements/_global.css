@@ -28,4 +28,15 @@ body {
   border-block-start-color:  var(--hr-color, var(--separator-color));
 }
 
+:where(button, input[type="submit"], a[role="button"]) {
+  cursor: pointer;
+  border-style: solid;
+}
 
+:where(button[disabled]) {
+  cursor: not-allowed;
+}
+
+[disabled] {
+  opacity: 0.7;
+}
