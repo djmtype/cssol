@@ -1,0 +1,246 @@
+---
+title: "Post One Has an Extremely Long Title for Some Reason"
+date: 2023-04-29
+description: "Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium quia facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab modi laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla animi nemo ea."
+image:
+  src: "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1664&q=80"
+  width: 1664
+  height: 1264
+  alt: "A wallpaper of a 3D liquid abstract of indigo and orange hues"
+status: published
+---
+import Form from "@components/Form.astro"
+import DL from "@components/DefinitionList.astro"
+
+## Typography 
+
+### Headings
+
+# Heading Level 1
+
+```html
+<h1>Heading Level 1</h1>
+```
+
+## Heading Level 2
+
+```html
+<h2>Heading Level 2</h2>
+```
+
+### Heading Level 3
+
+```html
+<h3>Heading Level 1</h3>
+```
+
+#### Heading Level 4
+
+```html
+<h4>Heading Level 1</h4>
+```
+
+### Lists
+
+- Item 
+- Item 
+- Item happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping
+
+```html
+<ul>
+<li>Item</li>
+<li>Item</li>
+<li>Item happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping</li>
+</ul>
+```
+
+1. Item one
+2. Item two
+3. Item three happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping
+
+```html
+<ol>
+<li>Item one</li>
+<li>Item two</li>
+<li>Item three happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping</li>
+</ol>
+```
+
+### Blockquote
+
+> Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.
+>
+> <footer><cite>Aldous Huxley</cite></footer>
+
+```html
+<blockquote>
+<p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
+<footer><cite>Aldous Huxley</cite></footer>
+</blockquote>
+```
+
+### Inline Text Elements
+
+  [Link](#0)  
+  **Bold**                   
+  *Italic*                                  
+  <u>Underline</u>                          
+  ~~Strike~~                                
+  <ins>Inserted</ins>                       
+  <small>Small</small>                      
+  <sup>Superscript</sup>                    
+  <sub>Subscript</sub>                      
+  <abbr title="Abbreviation">Abbr.</abbr>   
+  <kbd>Kbd</kbd>                            
+  <mark>Highlighted</mark>   
+
+
+## Images
+
+<figure>![Indigo and orange wallpaper](../../assets/photo-1618556450994-a6a128ef0d9d.jpeg)
+<figcaption>Photo by <a href="https://unsplash.com/@fakurian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Milad Fakurian</a> on <a href="https://unsplash.com/photos/bexwsdM5BCw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption></figure>
+
+```html
+<figure>
+<img src="/image.jpeg" alt="Indigo and orange wallpaper" width="1664" height="1264" loading="lazy" decoding="async">
+<figcaption>Photo by <a href="https://unsplash.com/@fakurian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Milad Fakurian</a> on <a href="https://unsplash.com/photos/bexwsdM5BCw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+</figure>
+```
+
+
+## Tables
+
+<figure>
+
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
+
+</figure>
+
+
+## Details
+
+<details>
+      <summary>Summary</summary>
+      <h2>How the World Began</h2>
+      <p>
+        Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium
+        quia facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab
+        modi laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla
+        animi nemo ea.
+      </p>
+      <p>
+        Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium
+        quia facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab
+        modi laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla
+        animi nemo ea.
+      </p>
+    </details>
+
+## Modal
+
+<button onclick="document.querySelector('dialog').showModal()">Open</button>
+
+<dialog>
+<form method="dialog">
+<header>
+  <h2>Dialog</h2>
+  <button autofocus aria-label="close" onclick="document.querySelector('dialog').close()">&#x2715;</button>
+</header>
+
+<article>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</article>
+
+<footer>
+  <button type="button" onclick="document.querySelector('dialog').close()">Close</button>
+</footer>
+</form>
+</dialog>
+
+## Progress
+
+<progress role="progressbar" tabindex="0"></progress>
+
+<progress role="progressbar" tabindex="0" aria-label="File upload" value="50" aria-valuemin="0" aria-valuenow="50" aria-valuemax="100" max="100"></progress>
+
+
+## Forms
+
+<Form />
+
+```html
+<form>
+  <p>
+    <select>
+      <option selected="selected" value="1">Title</option>
+      <option value="2">Mr</option>
+      <option value="3">Miss</option>
+      <option value="4">Mrs</option>
+      <option value="5">Other</option>
+    </select>
+  </p>
+
+  <p>
+    <label>First name</label>
+    <input type="text" name="first_name" placeholder="Jane" />
+  </p>
+
+  <p>
+    <label>Surname</label>
+    <input type="text" name="surname" placeholder="Doe" />
+  </p>
+
+  <p>
+    <label>Email</label>
+    <input
+      type="email"
+      name="email"
+      required=""
+      placeholder="janedoe@mailbox.com"
+    />
+  </p>
+
+  <p>
+    <label>Enquiry type</label>
+    <label
+      ><input checked="checked" name="type" type="radio" value="sales" /> Sales</label
+    >
+    <label><input name="type" type="radio" value="support" /> Support</label>
+    <label><input name="type" type="radio" value="billing" /> Billing</label>
+  </p>
+
+  <hr />
+  <p>
+    <label>Message</label>
+    <textarea rows="6" placeholder="Comments"></textarea>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" id="checkbox" value="terms" />
+      <span>I agree to the <a href="#">terms and conditions</a></span>
+    </label>
+  </p>
+
+  <p>
+		<button>Submit</button>
+		<button type="reset">Reset</button>
+  </p>
+</form>
+```
+
+## Buttons 
+
+<a href="#0" role="button">Link</a> 
+<input type="submit" /> 
+<button>Button</button> 
+<button disabled>Disabled Button</button>
+

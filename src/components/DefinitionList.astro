@@ -1,0 +1,17 @@
+---
+export interface Props {
+  term: string
+  description: string[]
+}
+
+
+const { term, description } = Astro.props as Props
+---
+
+<dl>
+	<dt>{term}</dt>
+	{description.map((word) => (
+		<dd>{word}</dd>
+	))}
+</dl>
+

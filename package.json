@@ -12,6 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^0.19.1",
+    "@csstools/postcss-oklab-function": "^2.2.1",
     "astro": "^2.3.0",
     "cssnano-preset-lite": "^3.0.0",
     "postcss-combine-duplicated-selectors": "^10.0.3",

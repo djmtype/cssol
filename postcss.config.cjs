@@ -3,10 +3,12 @@ const postcssPresetEnv = require("postcss-preset-env");
 const cssnano = require("cssnano");
 const postcssImport = require("postcss-import");
 const combineSelectors  = require('postcss-combine-duplicated-selectors');
+const postcssOKLabFunction = require('@csstools/postcss-oklab-function');
 
 module.exports = {
   plugins: [
     postcssImport(),
+    postcssOKLabFunction({ preserve: true }),
     postcssPresetEnv({
       stage: 0,
       autoprefixer: false,

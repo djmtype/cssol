@@ -1,22 +1,22 @@
-:root {
+:where(*) {
   --warning-text-color: var(--color-yellow-9);
-  --alarm-text-color: var(--color-red-9);
+  --alarm-text-color: var(--color-red-10);
   --success-text-color: var(--color-green-9);
 
-  --warning-surface-color: var(--color-yellow-3);
-  --alarm-surface-color: var(--color-red-3);
+  --warning-surface-color: var(--color-yellow-2);
+  --alarm-surface-color: var(--color-red-4);
   --success-surface-color: var(--color-green-3);
 
-  --primary-color: var(--color-indigo-10);
-  --primary-color-hover: var(--color-indigo-8);
+  --primary-color: var(--color-indigo-11);
+  --primary-color-glare: var(--text-color);
 
-  --text-color: var(--color-gray-10);
-  --text-color-muted: var(--color-gray-7);
-  --surface-color-muted: var(--color-gray-7);
+  --text-color: var(--color-gray-14);
+  --text-color-muted: var(--color-gray-11);
+  --surface-color-muted: var(--color-gray-11);
   --surface-color: var(--color-gray-1);
   --surface-color-glare: var(--color-gray-0);
 
-  --separator-color: var(--color-gray-4);
+  --separator-color: var(--color-gray-3);
 
   --text-color-invert: var(--color-gray-1);
   --surface-color-invert: var(--color-gray-9);
@@ -24,12 +24,13 @@
   --mark-text-color: var(--text-color);
   --mark-surface-color: var(--warning-surface-color);
 
-  --box-shadow-default: 0 0 2em 0 var(--color-gray-3);
+  --box-shadow-default: 0 0 2em 0 #00000030;
 }
 
-:root {
+:where(*) {
+
   @media (prefers-color-scheme: dark) {
-    --warning-surface-color: var(--color-yellow-3);
+    --warning-surface-color: var(--color-yellow-2);
     --alarm-surface-color: var(--color-red-3);
     --success-surface-color: var(--color-green-3);
 
@@ -37,23 +38,25 @@
     --alarm-text-color: var(--color-red-3);
     --success-text-color: var(--color-green-3);
 
-    --primary-color: var(--color-indigo-3);
-    --primary-color-hover: var(--color-indigo-2);
+    --primary-color: var(--color-indigo-2);
+    --primary-color-glare: var(--text-color);
 
     --text-color: var(--color-gray-1);
-    --text-color-muted: var(--color-gray-4);
-    --surface-color-muted: var(--color-gray-4);
-    --surface-color: var(--color-gray-10);
-    --surface-color-glare: var(--color-gray-9);
+    --text-color-muted: var(--color-gray-2);
+    --surface-color-muted: var(--color-gray-2);
+    --surface-color: var(--color-gray-14);
+    --surface-color-glare: var(--color-gray-13);
 
-    --separator-color: var(--color-gray-7);
+    --separator-color: var(--color-gray-9);
 
-    --text-color-invert: var(--color-gray-9);
+    --text-color-invert: var(--color-gray-14);
     --surface-color-invert: var(--color-gray-1);
 
     --mark-text-color: var(--text-color-invert);
     --mark-surface-color: var(--warning-surface-color);
 
-    --box-shadow-default: 0 0 2em 0 var(--color-gray-10);
+    --box-shadow-default: 0 0 2em 0 #00000070;
   }
+
+
 }

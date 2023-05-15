@@ -28,7 +28,7 @@ const { title } = Astro.props as Props
         <ul role="list">
           <li><a href="/">Home</a></li>
           <li><a href="/blog">Blog Example</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a role="button" href="/contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -43,3 +43,11 @@ const { title } = Astro.props as Props
     </footer>
   </body>
 </html>
+
+<style is:global>
+  :where(*) {
+    --astro-code-color-background: var(--surface-color-glare);
+    --astro-code-token-string-expression: var(--primary-color);
+    --astro-code-color-text: var(--text-color);
+  }
+</style>

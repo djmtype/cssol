@@ -1,0 +1,89 @@
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+dialog {
+  --dialog-space: var(--space-md);
+  display: grid;
+  align-content: start;
+  position: fixed;
+  inset: 0;
+  padding: 0;
+  transition: opacity 0.5s ease;
+  background-color: var(--surface-color-glare);
+  border: var(--border-size-1) solid var(--separator-color);
+  box-shadow: var(--box-shadow-default);
+  border-radius: var(--border-radius-rounded);
+  max-inline-size: min(90vw, var(--line-length-md));
+  z-index: 10;
+  overflow: hidden;
+  margin: auto;
+}
+
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+dialog > form {
+  display: grid;
+  grid-auto-rows: auto 1fr auto;
+
+  align-items: start;
+  max-block-size: 80vh;
+  max-block-size: 80dvb;
+}
+
+dialog::backdrop {
+  background-color: #00000050;
+  backdrop-filter: blur(5px);
+  transition: backdrop-filter 0.5s ease;
+}
+
+dialog header,
+dialog footer {
+  padding: var(--dialog-space);
+}
+
+dialog header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-block-end: var(--border-size-1) solid var(--separator-color);
+}
+
+dialog header > :where(h2, h3, h4) {
+  font-size: var(--font-size-lg);
+}
+
+dialog header > button {
+  padding: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-circle);
+}
+
+dialog article {
+  padding: var(--dialog-space);
+  overflow-y: auto;
+  max-block-size: 100%; /* safari */
+  overscroll-behavior-y: contain;
+}
+
+dialog article > * + * {
+  margin-top: var(--flow-space, 1.5em);
+}
+
+dialog footer {
+  border-block-start: var(--border-size-1) solid var(--separator-color);
+}
+
+dialog footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+}

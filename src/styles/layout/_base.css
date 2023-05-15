@@ -40,7 +40,7 @@ body > header > nav ul {
 body > header > nav a {
   padding: var(--space-xs) var(--space-sm);
   display: inline-flex;
-  font-weight: var(--font-weight-bold);
+
 }
 
 main > * + * {
@@ -99,18 +99,18 @@ body > footer {
 
 /* inner layout */
 
-section {
+:where(section) {
   max-width: var(--section-width);
   margin-inline: auto;
   padding-inline: var(--gutter);
   position: relative;
 }
 
-section > * + * {
+:where(section > * + *) {
   margin-top: var(--section-items-space, var(--space-2xl));
 }
 
-section :where(article) {
+:where(section > article) {
   --section-width: min(100%, var(--line-length-md));
   --grid-columns: auto min(100%, var(--line-length-md)) auto;
   display: grid;
@@ -122,30 +122,30 @@ section :where(article) {
   box-shadow: var(--box-shadow-default);
 }
 
-section :where(article:only-child) {
+:where(section > article:only-child) {
   --section-width: 100%;
   box-shadow: unset;
   background-color: unset;
   padding: unset;
 }
 
-article > * {
+:where(article > *) {
   grid-column: 2;
 }
 
-section article:only-child header + figure {
+:where(section article:only-child header + figure) {
   grid-column: 1/-1;
 }
 
-article > * + * {
-  margin-top: var(--flow-space, 1.5em);
+:where(article > * + *) {
+  margin-block-start: var(--flow-space, 1.5em);
 }
 
 article :where(h1, h2, h3, h4) {
   --flow-space: 1em;
 }
 
-article hgroup > * + * {
+:where(article hgroup > * + *) {
   margin-top: var(--space-xs);
 }
 
@@ -166,8 +166,9 @@ figure:has(img, video) + * {
   margin-top: var(--flow-space, var(--space-xl));
 }
 
-figure figcaption {
+figure > figcaption {
   --flow-space: var(--space-xs);
+  margin-top: var(--flow-space);
   color: var(--text-color-muted);
   font-size: var(--font-size-xs);
 }
@@ -184,3 +185,5 @@ article :where(ul, ol):has(li input[type="checkbox"]) {
   list-style-type: none;
   padding-inline-start: calc(var(--item-inline-start) / 3);
 }
+
+

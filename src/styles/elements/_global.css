@@ -1,13 +1,32 @@
+
+
 :where(html) {
   accent-color: var(--primary-color);
+  block-size: 100%;
   
 }
-
-
 
 body {
   color: var(--text-color);
   background-color: var(--surface-color);
+
+}
+
+:is(a, button, input, textarea, summary, select, progress) {
+  --outline-size: max(2px, 0.08em);
+  --outline-style: solid;
+  --outline-color: currentColor;
+}
+
+:is(a, button, input, textarea, summary, select, progress):focus-visible {
+  outline: var(--outline-size) var(--outline-style) var(--outline-color);
+  outline-offset: var(--outline-offset, var(--outline-size));
+}
+
+
+
+main:focus {
+  outline: none;
 }
 
 
@@ -28,15 +47,16 @@ body {
   border-block-start-color:  var(--hr-color, var(--separator-color));
 }
 
-:where(button, input[type="submit"], a[role="button"]) {
-  cursor: pointer;
+:where(button, select, input, textarea) {
   border-style: solid;
 }
 
-:where(button[disabled]) {
-  cursor: not-allowed;
+:where(button, input[type="submit"], input[type="radio"], input[type="checkbox"], select) {
+  cursor: pointer;
 }
 
-[disabled] {
+
+:where([disabled]) {
   opacity: 0.7;
+  cursor: not-allowed;
 }

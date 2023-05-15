@@ -76,7 +76,7 @@ a {
 
 a:hover,
 a:focus-visible {
-  color: var(--primary-color-hover);
+  color: var(--primary-color-glare);
   text-decoration: none;
 }
 
@@ -137,19 +137,29 @@ sub {
   bottom: -0.25em;
 }
 
+pre, code {
+  font-family: var(--font-family-mono);
+}
+
+
 pre {
   padding: var(--space-xs) var(--space-sm);
   background: var(--surface-color-glare);
   border-radius: var(--border-radius-rounded);
-  font-size: var(--font-size-smaller);
-  
   max-width: 100%;
   overflow-x: auto;
+  font-size: var(--font-size-smaller);
 }
 
-pre, code {
-  font-family: var(--font-family-mono);
+code:not(pre > code) {
+  font-size: var(--font-size-smaller);
+  padding: 0.125em 0.25em;
+  border-radius: .125em;
+  background-color: var(--surface-color-glare);
 }
+
+
+
 
 
 

@@ -1,21 +1,24 @@
 
-:where(button, input[type="submit"], a[role="button"]) {
-  display: inline-flex;
-  padding: var(--space-3xs);
-  border-radius: var(--border-radius-rounded);
-  border-width: var(--border-size-1);
+:where(button, input[type="submit"], a[role="button"]:not(nav a[role="button"])) {
   appearance: none;
-}
-
-:where(button, input[type="submit"], a[role="button"]):not([class]) {
+  display: inline-flex;
   padding: var(--space-3xs) var(--space-md);
+  border-radius: var(--border-radius-rounded);
+  border: var(--border-size-1) solid;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 
 
+/* :where(input[type="submit"]) {
+  justify-self: start;
+} */
 
 button:not([class]),
-input[type="submit"]:not([class]) {
+input[type="submit"]:not([class]),
+a[role="button"]:not(nav a[role="button"]):not([class]) {
   
   background-color: var(--primary-color, buttonface);
   border-color: var(--primary-color, buttonborder);
@@ -23,16 +26,17 @@ input[type="submit"]:not([class]) {
 }
 
 button:not([class]):not([disabled]),
-input[type="submit"]:not([class]):not([disabled]) {
+input[type="submit"]:not([class]):not([disabled]),
+a[role="button"]:not(nav a[role="button"]):not([class]):not([disabled]) {
+  
   &:hover,
   &:focus-visible {
-    --outline-color: var(--primary-color-hover);
-    background-color: var(--primary-color-hover);
-    border-color: var(--primary-color-hover);
+    --outline-color: var(--primary-color-glare);
+    background-color: var(--primary-color-glare);
+    border-color: var(--primary-color-glare);
+  }
+
+  &:active {
+    transform: scale(.98);
   }
 }
-
-
-
-
-
