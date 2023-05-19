@@ -9,11 +9,23 @@ image:
   alt: "A wallpaper of a 3D liquid abstract of indigo and orange hues"
 status: published
 ---
-import Form from "@components/Form.astro"
+
+import Forms from "@components/Forms.astro"
 import DL from "@components/DefinitionList.astro"
 import Component from '@components/Component.astro';
 import Progress from '@components/Progress.astro';
 import Dialog from '@components/Dialog.astro';
+
+import Headings from '@components/Headings.astro';
+import Lists from '@components/Lists.astro';
+import Blockquote from '@components/Blockquote.astro';
+import InlineText from '@components/InlineText.astro';
+
+import Buttons from '@components/Buttons.astro';
+
+import Images from '@components/Images.astro';
+import Tables from '@components/Tables.astro';
+import Details from '@components/Details.astro';
 
 
 
@@ -23,214 +35,60 @@ import Dialog from '@components/Dialog.astro';
 
 ### Headings
 
-<details open>
-<summary>Example</summary>
-# Heading Level 1
 
-## Heading Level 2
-
-### Heading Level 3
-
-#### Heading Level 4
-</details>
-
-<details>
-<summary>HTML</summary>
-```html
-<h1>Heading Level 1</h1>
-<h2>Heading Level 2</h2>
-<h3>Heading Level 3</h3>
-<h4>Heading Level 4</h4>
-```
-</details>
+<Component>
+<Headings />
+</Component>
 
 
 ### Lists
 
-#### Unordered List
+<Component>
+<Lists />
+</Component>
 
-- Item 
-- Item 
-- Item happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping
-
-<details>
-<summary>HTML</summary>
-```html
-<ul>
-<li>Item</li>
-<li>Item</li>
-<li>Item happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping</li>
-</ul>
-```
-</details>
-
-#### Ordered List
-
-1. Item one
-2. Item two
-3. Item three happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping
-
-
-<details>
-<summary>HTML</summary>
-```html
-<ol>
-<li>Item one</li>
-<li>Item two</li>
-<li>Item three happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping</li>
-</ol>
-```
-</details>
 
 ### Blockquote
 
-> Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.
->
-> <footer><cite>Aldous Huxley</cite></footer>
-
-
-<details>
-<summary>HTML</summary>
-```html
-<blockquote>
-<p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
-<footer><cite>Aldous Huxley</cite></footer>
-</blockquote>
-```
-</details>
+<Component>
+<Blockquote />
+</Component>
 
 ### Inline Text Elements
 
-  [Link](#0)  
-  **Bold**                   
-  *Italic*                                  
-  <u>Underline</u>                          
-  ~~Strike~~                                
-  <ins>Inserted</ins>                       
-  <small>Small</small>                      
-  <sup>Superscript</sup>                    
-  <sub>Subscript</sub>                      
-  <abbr title="Abbreviation">Abbr.</abbr>   
-  <kbd>Kbd</kbd>                            
-  <mark>Highlighted</mark>   
+<Component>
+<InlineText />
+</Component> 
 
-<details>
-<summary>HTML</summary>
-```html
-<a href="#0">Link</a>
-<strong>Bold</strong>
-<em>Italic</em>
-<u>Underline</u>
-<del>Strike</del>
-<ins>Inserted</ins>
-<small>Small</small>
-<sup>Superscript</sup>
-<sub>Subscript</sub>
-<abbr title="Abbreviation">Abbr.</abbr>
-<kbd>Kbd</kbd>
-<mark>Highlighted</mark>
-```
-</details>
+
+## Buttons 
+
+<Component>
+<Buttons />
+</Component> 
+
+
 
 ## Images
 
-<figure>![Primarily indigo with a touch of orange satin wallpaper](../../assets/photo-1618556450994-a6a128ef0d9d.jpeg)
-<figcaption>Photo by <a href="https://unsplash.com/@fakurian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Milad Fakurian</a> on <a href="https://unsplash.com/photos/bexwsdM5BCw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption></figure>
+<Component>
+<Images />
+</Component> 
 
-<details>
-<summary>HTML</summary>
-```html
-<figure>
-<img src="/image.jpeg" alt="Primarily indigo with a touch of orange satin wallpaper" width="1664" height="1264" loading="lazy" decoding="async">
-<figcaption>Photo by <a href="#0">Milad Fakurian</a> on <a href="#0">Unsplash</a></figcaption>
-</figure>
-```
-</details>
 
 
 ## Tables
 
-<figure>
+<Component>
+<Tables />
+</Component> 
 
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
 
-</figure>
-
-<details>
-<summary>HTML</summary>
-```html
-<figure>
-	<table>
-		<thead>
-			<tr>
-				<th>Tables</th>
-				<th align="center">Are</th>
-				<th align="right">Cool</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>col 1 is</td>
-				<td align="center">left-aligned</td>
-				<td align="right">$1600</td>
-			</tr>
-			<tr>
-				<td>col 2 is</td>
-				<td align="center">centered</td>
-				<td align="right">$12</td>
-			</tr>
-			<tr>
-				<td>col 3 is</td>
-				<td align="center">right-aligned</td>
-				<td align="right">$1</td>
-			</tr>
-		</tbody>
-	</table>
-</figure>
-```
-</details>
 ## Details
 
-<details>
-      <summary>Summary</summary>
-      ## Details Element
-        Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium
-        quia facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab
-        modi laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla
-        animi nemo ea.
-
-        Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium
-        quia facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab
-        modi laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla
-        animi nemo ea.
-        </details>
-
-
-<details>
-<summary>HTML</summary>
-```html
-<details>
-	<summary>Summary</summary>
-	<h2>Details Element</h2>
-	<p>
-		Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium quia
-		facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab modi
-		laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla animi
-		nemo ea.
-	</p>
-	<p>
-		Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium quia
-		facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab modi
-		laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla animi
-		nemo ea.
-	</p>
-</details>
-```
-</details>
+<Component>
+<Details />
+</Component> 
 
 
 
@@ -247,86 +105,9 @@ import Dialog from '@components/Dialog.astro';
 </Component>
 
 
-
 ## Forms
 
-<Form />
-
-
-<details>
- <summary>HTML</summary>
-
-```html
-<form>
-  <p>
-    <select>
-      <option selected="selected" value="1">Title</option>
-      <option value="2">Mr</option>
-      <option value="3">Miss</option>
-      <option value="4">Mrs</option>
-      <option value="5">Other</option>
-    </select>
-  </p>
-
-  <p>
-    <label>First name</label>
-    <input type="text" name="first_name" placeholder="Jane" />
-  </p>
-
-  <p>
-    <label>Surname</label>
-    <input type="text" name="surname" placeholder="Doe" />
-  </p>
-
-  <p>
-    <label>Email</label>
-    <input
-      type="email"
-      name="email"
-      required=""
-      placeholder="janedoe@mailbox.com"
-    />
-  </p>
-
-  <p>
-    <label>Enquiry type</label>
-    <label
-      ><input checked="checked" name="type" type="radio" value="sales" /> Sales</label
-    >
-    <label><input name="type" type="radio" value="support" /> Support</label>
-    <label><input name="type" type="radio" value="billing" /> Billing</label>
-  </p>
-
-  <hr />
-  <p>
-    <label>Message</label>
-    <textarea rows="6" placeholder="Comments"></textarea>
-  </p>
-
-  <p>
-    <label>
-      <input type="checkbox" id="checkbox" value="terms" />
-      <span>I agree to the <a href="#">terms and conditions</a></span>
-    </label>
-  </p>
-
-  <p>
-    <button><strong>Submit</strong></button>
-    <button type="reset">Reset</button>
-  </p>
-</form>
-```
-      
-</details>
-
-
-
-## Buttons 
-
-<a href="#0" role="button">Link</a> 
-<input type="submit" /> 
-<button>Button</button> 
-<button disabled>Disabled Button</button>
-
-
+<Component>
+<Forms />
+</Component>
 

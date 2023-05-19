@@ -48,5 +48,14 @@ const { title } = Astro.props as Props
     --astro-code-token-string-expression: var(--primary-color);
     --astro-code-color-text: var(--text-color);
   }
+
+  grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr));
+  align-items: start;
+  justify-items: start;
+}
+
 </style>
 

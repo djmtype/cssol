@@ -158,8 +158,16 @@ code:not(pre > code) {
   background-color: var(--surface-color-glare);
 }
 
+dl {
+  --item-inline-start: var(--space-xl);
+}
+dt {
+  font-weight: var(--font-weight-bold);
+}
 
-
+dd {
+  padding-inline-start: var(--item-inline-start);
+}
 
 
 

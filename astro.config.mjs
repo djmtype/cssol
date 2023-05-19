@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import { siteMeta } from "./src/app.config";
 import remarkUnwrapImages from "remark-unwrap-images";
-
+import markdownIntegration from '@astropub/md';
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
@@ -9,6 +9,9 @@ export default defineConfig({
   site: siteMeta.url,
 
   integrations: [
+
+      markdownIntegration(),
+
     
     mdx({
       shikiConfig: {
