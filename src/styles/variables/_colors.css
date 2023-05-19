@@ -1,4 +1,4 @@
-:where(*) {
+:where(html) {
   --hue-red: 25;
   --hue-pink: 350;
   --hue-purple: 310;
@@ -14,7 +14,7 @@
 }
 
 
-/* :where(*) {
+/* :where(html) {
   --color-0: oklch(99% .03 var(--color-hue, 0));
   --color-1: oklch(95% .06 var(--color-hue, 0));
   --color-2: oklch(88% .12 var(--color-hue, 0));
@@ -33,12 +33,12 @@
   --color-15: oklch(11% .05 var(--color-hue, 0));
 } */
 
-:where(*) {
+:where(html) {
   --gray-chroma: 0;
   --gray-hue: 0;
   --color-gray-0: oklch(99% 0 0);
   --color-gray-1: oklch(95% 0 0);
-  --color-gray-2: oklch(88% 0 0);
+  --color-gray-2: oklch(90% 0 0);
   --color-gray-3: oklch(80% 0 0);
   --color-gray-4: oklch(74% 0 0);
   --color-gray-5: oklch(68% 0 0);
@@ -54,10 +54,10 @@
   --color-gray-15: oklch(10% 0 0);
 }
 
-:where(*) {
+:where(html) {
   --color-indigo-0: oklch(99% .03 270);
   --color-indigo-1: oklch(95% .06 270);
-  --color-indigo-2: oklch(88% .12 270);
+  --color-indigo-2: oklch(89% .12 270);
   --color-indigo-3: oklch(80% .14 270);
   --color-indigo-4: oklch(74% .16 270);
   --color-indigo-5: oklch(68% .19 270);
@@ -74,7 +74,7 @@
 }
 
 
-:where(*) {
+:where(html) {
   --color-red-0: oklch(99% .03 25);
   --color-red-1: oklch(95% .06 25);
   --color-red-2: oklch(88% .12 25);
@@ -94,7 +94,7 @@
 }
 
 
-:where(*) {
+:where(html) {
   --color-yellow-0: oklch(99% .03 100);
   --color-yellow-1: oklch(95% .06 100);
   --color-yellow-2: oklch(88% .12 100);
@@ -113,7 +113,7 @@
   --color-yellow-15: oklch(11% .05 100);
 }
 
-:where(*) {
+:where(html) {
   --color-green-0: oklch(99% .03 145);
   --color-green-1: oklch(95% .06 145);
   --color-green-2: oklch(88% .12 145);

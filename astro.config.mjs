@@ -9,6 +9,7 @@ export default defineConfig({
   site: siteMeta.url,
 
   integrations: [
+    
     mdx({
       shikiConfig: {
         // Choose from Shiki's built-in themes (or add your own)

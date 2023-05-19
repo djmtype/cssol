@@ -11,41 +11,50 @@ status: published
 ---
 import Form from "@components/Form.astro"
 import DL from "@components/DefinitionList.astro"
+import Component from '@components/Component.astro';
+import Progress from '@components/Progress.astro';
+import Dialog from '@components/Dialog.astro';
+
+
+
+
 
 ## Typography 
 
 ### Headings
 
+<details open>
+<summary>Example</summary>
 # Heading Level 1
-
-```html
-<h1>Heading Level 1</h1>
-```
 
 ## Heading Level 2
 
-```html
-<h2>Heading Level 2</h2>
-```
-
 ### Heading Level 3
 
-```html
-<h3>Heading Level 1</h3>
-```
-
 #### Heading Level 4
+</details>
 
+<details>
+<summary>HTML</summary>
 ```html
-<h4>Heading Level 1</h4>
+<h1>Heading Level 1</h1>
+<h2>Heading Level 2</h2>
+<h3>Heading Level 3</h3>
+<h4>Heading Level 4</h4>
 ```
+</details>
+
 
 ### Lists
+
+#### Unordered List
 
 - Item 
 - Item 
 - Item happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping
 
+<details>
+<summary>HTML</summary>
 ```html
 <ul>
 <li>Item</li>
@@ -53,11 +62,17 @@ import DL from "@components/DefinitionList.astro"
 <li>Item happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping</li>
 </ul>
 ```
+</details>
+
+#### Ordered List
 
 1. Item one
 2. Item two
 3. Item three happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping
 
+
+<details>
+<summary>HTML</summary>
 ```html
 <ol>
 <li>Item one</li>
@@ -65,6 +80,7 @@ import DL from "@components/DefinitionList.astro"
 <li>Item three happens to be extremely long and verbose to illustrate line wrapping, item happens to be extremely long and verbose to illustrate line wrapping</li>
 </ol>
 ```
+</details>
 
 ### Blockquote
 
@@ -72,12 +88,16 @@ import DL from "@components/DefinitionList.astro"
 >
 > <footer><cite>Aldous Huxley</cite></footer>
 
+
+<details>
+<summary>HTML</summary>
 ```html
 <blockquote>
 <p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
 <footer><cite>Aldous Huxley</cite></footer>
 </blockquote>
 ```
+</details>
 
 ### Inline Text Elements
 
@@ -94,18 +114,38 @@ import DL from "@components/DefinitionList.astro"
   <kbd>Kbd</kbd>                            
   <mark>Highlighted</mark>   
 
+<details>
+<summary>HTML</summary>
+```html
+<a href="#0">Link</a>
+<strong>Bold</strong>
+<em>Italic</em>
+<u>Underline</u>
+<del>Strike</del>
+<ins>Inserted</ins>
+<small>Small</small>
+<sup>Superscript</sup>
+<sub>Subscript</sub>
+<abbr title="Abbreviation">Abbr.</abbr>
+<kbd>Kbd</kbd>
+<mark>Highlighted</mark>
+```
+</details>
 
 ## Images
 
-<figure>![Indigo and orange wallpaper](../../assets/photo-1618556450994-a6a128ef0d9d.jpeg)
+<figure>![Primarily indigo with a touch of orange satin wallpaper](../../assets/photo-1618556450994-a6a128ef0d9d.jpeg)
 <figcaption>Photo by <a href="https://unsplash.com/@fakurian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Milad Fakurian</a> on <a href="https://unsplash.com/photos/bexwsdM5BCw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption></figure>
 
+<details>
+<summary>HTML</summary>
 ```html
 <figure>
-<img src="/image.jpeg" alt="Indigo and orange wallpaper" width="1664" height="1264" loading="lazy" decoding="async">
-<figcaption>Photo by <a href="https://unsplash.com/@fakurian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Milad Fakurian</a> on <a href="https://unsplash.com/photos/bexwsdM5BCw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+<img src="/image.jpeg" alt="Primarily indigo with a touch of orange satin wallpaper" width="1664" height="1264" loading="lazy" decoding="async">
+<figcaption>Photo by <a href="#0">Milad Fakurian</a> on <a href="#0">Unsplash</a></figcaption>
 </figure>
 ```
+</details>
 
 
 ## Tables
@@ -120,61 +160,101 @@ import DL from "@components/DefinitionList.astro"
 
 </figure>
 
-
+<details>
+<summary>HTML</summary>
+```html
+<figure>
+	<table>
+		<thead>
+			<tr>
+				<th>Tables</th>
+				<th align="center">Are</th>
+				<th align="right">Cool</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>col 1 is</td>
+				<td align="center">left-aligned</td>
+				<td align="right">$1600</td>
+			</tr>
+			<tr>
+				<td>col 2 is</td>
+				<td align="center">centered</td>
+				<td align="right">$12</td>
+			</tr>
+			<tr>
+				<td>col 3 is</td>
+				<td align="center">right-aligned</td>
+				<td align="right">$1</td>
+			</tr>
+		</tbody>
+	</table>
+</figure>
+```
+</details>
 ## Details
 
 <details>
       <summary>Summary</summary>
-      <h2>How the World Began</h2>
-      <p>
+      ## Details Element
         Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium
         quia facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab
         modi laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla
         animi nemo ea.
-      </p>
-      <p>
+
         Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium
         quia facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab
         modi laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla
         animi nemo ea.
-      </p>
-    </details>
+        </details>
 
-## Modal
 
-<button onclick="document.querySelector('dialog').showModal()">Open</button>
+<details>
+<summary>HTML</summary>
+```html
+<details>
+	<summary>Summary</summary>
+	<h2>Details Element</h2>
+	<p>
+		Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium quia
+		facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab modi
+		laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla animi
+		nemo ea.
+	</p>
+	<p>
+		Lorem ipsum, amet consectetur adipisicing elit. Corporis praesentium quia
+		facere. Sint quos illum omnis possimus. Earum soluta assumenda, ab modi
+		laboriosam quibusdam laboriosam quibusdam, voluptatum beatae nulla animi
+		nemo ea.
+	</p>
+</details>
+```
+</details>
 
-<dialog>
-<form method="dialog">
-<header>
-  <h2>Dialog</h2>
-  <button autofocus aria-label="close" onclick="document.querySelector('dialog').close()">&#x2715;</button>
-</header>
 
-<article>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</article>
+## Dialog
 
-<footer>
-  <button type="button" onclick="document.querySelector('dialog').close()">Close</button>
-</footer>
-</form>
-</dialog>
+<Component>
+<Dialog />
+</Component>
 
 ## Progress
 
-<progress role="progressbar" tabindex="0"></progress>
+<Component>
+<Progress />
+</Component>
 
-<progress role="progressbar" tabindex="0" aria-label="File upload" value="50" aria-valuemin="0" aria-valuenow="50" aria-valuemax="100" max="100"></progress>
 
 
 ## Forms
 
 <Form />
+
+
+<details>
+ <summary>HTML</summary>
 
 ```html
 <form>
@@ -231,11 +311,15 @@ import DL from "@components/DefinitionList.astro"
   </p>
 
   <p>
-		<button>Submit</button>
-		<button type="reset">Reset</button>
+    <button><strong>Submit</strong></button>
+    <button type="reset">Reset</button>
   </p>
 </form>
 ```
+      
+</details>
+
+
 
 ## Buttons 
 
@@ -243,4 +327,6 @@ import DL from "@components/DefinitionList.astro"
 <input type="submit" /> 
 <button>Button</button> 
 <button disabled>Disabled Button</button>
+
+
 

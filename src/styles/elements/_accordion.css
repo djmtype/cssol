@@ -43,3 +43,6 @@ summary {
 	}
 }
 
+details > pre {
+	padding: 0;
+}

@@ -1,0 +1,12 @@
+---
+const html = await Astro.slots.render('default');
+import { Code } from 'astro/components';
+---
+
+<Fragment set:html={html} />
+<details>
+<summary>HTML</summary>
+<Code code={html} lang="html" theme="css-variables" wrap />
+</details>
+
+

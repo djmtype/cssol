@@ -1,7 +1,6 @@
 ---
 import "@styles/app.css"
 
-
 type Props = {
   title: string
 }
@@ -34,7 +33,6 @@ const { title } = Astro.props as Props
     </header>
     <main id="main-content">
       <!-- Breadcrumb -->
-     
 
       <slot />
     </main>
@@ -45,9 +43,10 @@ const { title } = Astro.props as Props
 </html>
 
 <style is:global>
-  :where(*) {
+  :where(html) {
     --astro-code-color-background: var(--surface-color-glare);
     --astro-code-token-string-expression: var(--primary-color);
     --astro-code-color-text: var(--text-color);
   }
 </style>
+

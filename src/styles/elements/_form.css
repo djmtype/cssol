@@ -3,19 +3,19 @@
   opacity: .7;
 }
 
-:where(article > form > * + *) {
+:where(form:not([method="dialog"]) > * + *) {
   margin-top: var(--flow-space, 1em);
 }
 
 
-article > form > p {
+form > p {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 1ex 1em;
 }
 
-article form > p > label:first-child {
+form > p > label:first-child {
   flex-basis: max-content;
   min-width: 12ch;
 }

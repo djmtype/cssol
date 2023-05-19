@@ -25,9 +25,9 @@ a[role="button"]:not(nav a[role="button"]):not([class]) {
   color: var(--text-color-invert);
 }
 
-button:not([class]):not([disabled]),
+:where(button:not([class]):not([disabled]),
 input[type="submit"]:not([class]):not([disabled]),
-a[role="button"]:not(nav a[role="button"]):not([class]):not([disabled]) {
+a[role="button"]:not(nav a[role="button"]):not([class]):not([disabled])) {
   
   &:hover,
   &:focus-visible {
@@ -40,3 +40,30 @@ a[role="button"]:not(nav a[role="button"]):not([class]):not([disabled]) {
     transform: scale(.98);
   }
 }
+
+
+div[role="tablist"] {
+  border-bottom: var(--border-size-1) solid var(--separator-color);
+}
+
+div[role="tablist"] > button {
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  color: var(--primary-color);
+
+  &:hover, &:focus-visible {
+    color: var(--primary-color-glare);
+  }
+}
+
+[role="tablist"] > button[aria-selected="true"] {
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+
+  cursor: default;
+}
+
+/* [role="tabpanel"] {
+  background-color: var(--surface-color-glare);
+} */

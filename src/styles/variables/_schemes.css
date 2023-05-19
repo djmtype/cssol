@@ -1,4 +1,4 @@
-:where(*) {
+:where(html) {
   --warning-text-color: var(--color-yellow-9);
   --alarm-text-color: var(--color-red-10);
   --success-text-color: var(--color-green-9);
@@ -27,7 +27,7 @@
   --box-shadow-default: 0 0 2em 0 #00000030;
 }
 
-:where(*) {
+:where(html) {
 
   @media (prefers-color-scheme: dark) {
     --warning-surface-color: var(--color-yellow-2);

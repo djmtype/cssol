@@ -7,6 +7,9 @@ dependencies:
   '@csstools/postcss-oklab-function':
     specifier: ^2.2.1
     version: 2.2.1(postcss@8.4.23)
+  '@github/tab-container-element':
+    specifier: ^3.2.0
+    version: 3.2.0
   astro:
     specifier: ^2.3.0
     version: 2.3.0
@@ -937,6 +940,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@github/tab-container-element@3.2.0:
+    resolution: {integrity: sha512-to5ZJuywKK3KX53X1ifOcWjvUTQcBGdQ6Qkhm8L97xQ3ovICag1048M3YMpc+QSdr8xWeCBMnLeMnENqotB0Og==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}

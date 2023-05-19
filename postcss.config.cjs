@@ -1,14 +1,19 @@
-
 const postcssPresetEnv = require("postcss-preset-env");
 const cssnano = require("cssnano");
 const postcssImport = require("postcss-import");
 const combineSelectors  = require('postcss-combine-duplicated-selectors');
-const postcssOKLabFunction = require('@csstools/postcss-oklab-function');
+// const postcssOKLabFunction = require('@csstools/postcss-oklab-function');
 
 module.exports = {
   plugins: [
     postcssImport(),
-    postcssOKLabFunction({ preserve: true }),
+    // postcssOKLabFunction({ 
+    //   preserve: true,
+    //     // enableProgressiveCustomProperties: false,
+    //     // subFeatures: {
+    //     //   displayP3: false
+    //     // } 
+    //   }),
     postcssPresetEnv({
       stage: 0,
       autoprefixer: false,
@@ -25,19 +30,21 @@ module.exports = {
         "color-functional-notation": false,
         'double-position-gradients': false,
         // "has-pseudo-class": false
-        // 'lab-function': {
-        //   preserve: false,
-        //   enableProgressiveCustomProperties: false,
-        //   subFeatures: {
-        //     displayP3: false
-        //   }
-        // },
+        'oklab-function': {
+          preserve: true,
+          // enableProgressiveCustomProperties: false,
+          // subFeatures: {
+          //   displayP3: false
+          // }
+        },
         // "custom-media-queries": {
         //   importFrom: ["./src/styles/common/queries.css"],
         // },
       },
       
     }),
+
+
     combineSelectors(),
     cssnano({
       preset: 'default'
