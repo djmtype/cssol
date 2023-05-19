@@ -16,6 +16,7 @@
     "@astropub/md": "^0.2.0",
     "@csstools/postcss-oklab-function": "^2.2.2",
     "astro": "^2.5.0",
+    "astro-auto-import": "^0.3.0",
     "cssnano-preset-lite": "^3.0.0",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-import": "^15.1.0",
