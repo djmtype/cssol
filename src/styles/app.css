@@ -26,8 +26,8 @@
 @import 'elements/_button.css';
 @import 'elements/_form.css';
 @import 'elements/_table.css';
-@import 'elements/_accordion.css';
-@import 'elements/_modal.css';
+@import 'elements/_details.css';
+@import 'elements/_dialog.css';
 @import 'elements/_progress.css';
 
 @import 'elements/_global.css';

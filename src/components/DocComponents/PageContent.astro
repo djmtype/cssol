@@ -1,0 +1,22 @@
+---
+import type { MarkdownHeading } from 'astro';
+// import MoreMenu from '@components/DocComponents/MoreMenu.astro';
+// import TableOfContents from '@components/DocComponents/TableOfContents';
+
+type Props = {
+	title: string;
+	headings: MarkdownHeading[];
+};
+
+const { title, headings } = Astro.props;
+---
+
+<article id="article" class="content">
+	<section class="main-section">
+		<h1 class="content-title" id="overview">{title}</h1>
+
+		<slot />
+	</section>
+
+</article>
+

@@ -12,6 +12,7 @@
 			"@data/*": ["src/data/*"],
 			"@utilities/*": ["src/utilities/*"],
 			"@assets/*": ["src/assets/*"],
+			"@src/*": ["src/*"],
 		}
 	}
 }

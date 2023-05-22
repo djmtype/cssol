@@ -1,4 +1,4 @@
-:root {
+:where(html) {
 	--border-size-none: 0;
 	--border-size-1: max(1px, 0.0625rem);
 	--border-size-2: max(2px, 0.125rem);
@@ -6,6 +6,6 @@
 	--border-size-4: max(4px, 0.25rem);
 
 	--border-radius-rounded: max(4px, 0.25rem);
-	--border-radius-pill: 999em;
-	--border-radius-circle: 50%;
+	--border-radius-pill: 1e5px;
+	--border-radius-circle: 1e5px;
 }

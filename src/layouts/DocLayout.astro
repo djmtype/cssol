@@ -1,0 +1,48 @@
+---
+import type { MarkdownHeading } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from "@components/Base/BaseHead.astro"
+import BaseSEO from "@components/Base/BaseSEO.astro"
+// import HeadSEO from '../components/HeadSEO.astro';
+import BaseHeader from '@components/Base/BaseHeader.astro';
+import PageContent from '@components/DocComponents/PageContent.astro';
+import LeftSidebar from '@components/DocComponents/LeftSidebar.astro';
+// import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
+// import Footer from '../components/Footer/Footer.astro';
+import { SITE } from '../consts';
+
+type Props = CollectionEntry<'docs'>['data'] & {
+	headings: MarkdownHeading[];
+};
+
+const { headings, ...data } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentPage = Astro.url.pathname;
+const currentFile = `src/content/docs${currentPage.replace(/\/$/, '')}.md`;
+
+---
+
+<html dir={data.dir} lang={data.lang}>
+	<head>
+		<BaseHead />
+
+		<BaseSEO {...data} canonicalUrl={canonicalURL} />
+		
+	</head>
+
+	<body>
+		<BaseHeader currentPage={currentPage} />
+		<main class="layout">
+			<aside id="grid-left" title="Site Navigation">
+				<LeftSidebar currentPage={currentPage} />
+			</aside>
+			<div>
+				<PageContent title={data.title} headings={headings}>
+					<slot />
+				</PageContent>
+			</div>
+		
+		</main>
+		<!-- <Footer path={currentFile} /> -->
+	</body>
+</html>

@@ -1,4 +1,6 @@
-
+label + progress {
+  --flow-space: var(--space-2xs);
+}
 progress {
   appearance: none;
   display: inline-block;

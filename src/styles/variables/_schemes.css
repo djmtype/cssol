@@ -7,7 +7,7 @@
   --alarm-surface-color: var(--color-red-4);
   --success-surface-color: var(--color-green-3);
 
-  --primary-color: var(--color-indigo-11);
+  --primary-color: var(--color-indigo-10);
   --primary-color-glare: var(--text-color);
 
   --text-color: var(--color-gray-14);
@@ -38,7 +38,7 @@
     --alarm-text-color: var(--color-red-3);
     --success-text-color: var(--color-green-3);
 
-    --primary-color: var(--color-indigo-2);
+    --primary-color: var(--color-indigo-3);
     --primary-color-glare: var(--text-color);
 
     --text-color: var(--color-gray-1);

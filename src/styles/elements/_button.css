@@ -16,9 +16,9 @@
   justify-self: start;
 } */
 
-button:not([class]),
+:where(button:not([class]),
 input[type="submit"]:not([class]),
-a[role="button"]:not(nav a[role="button"]):not([class]) {
+a[role="button"]:not(nav a[role="button"]):not([class])) {
   
   background-color: var(--primary-color, buttonface);
   border-color: var(--primary-color, buttonborder);

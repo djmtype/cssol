@@ -1,6 +1,7 @@
 ::placeholder {
   color: var(--text-color);
   opacity: .7;
+  font-style: italic;
 }
 
 :where(form:not([method="dialog"]) > * + *) {

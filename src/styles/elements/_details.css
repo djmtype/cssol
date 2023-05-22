@@ -1,0 +1,60 @@
+details {
+	--details-inline-space: var(--space-lg);
+	padding: 0;
+	background-color: var(--surface-color);
+	border-radius: var(--border-radius-rounded);
+	border: var(--border-size-1) solid var(--separator-color);
+
+	
+}
+
+
+
+details > summary {
+	--icon-size: .75rem;
+	position: relative;
+	color: var(--primary-color);
+	cursor: pointer;
+	padding: var(--space-3xs) var(--space-xs);
+
+}
+
+
+details > * + * {
+	margin-top: var(--flow-space, 1.5em);
+}
+
+details > *:nth-child(2) {
+	--flow-space: var(--details-inline-space);
+}
+
+
+
+details[open] {
+	padding: var(--details-inline-space);
+	background-color: var(--surface-color-glare);
+}
+
+details[open] > summary {
+	font-weight: var(--font-weight-bold);
+	border-bottom: var(--border-size-1) solid var(--separator-color);
+	color: var(--text-color);
+  margin-block-start: calc(-1 * var(--details-inline-space));
+  margin-inline: calc(-1 * var(--details-inline-space));
+}
+
+
+summary {
+	&:hover, &:focus-visible {
+		color: var(--primary-color-glare);
+	}
+}
+
+details > pre {
+	padding: 0;
+}
+
+details > details {
+	background-color: var(--surface-color-glare);
+
+}

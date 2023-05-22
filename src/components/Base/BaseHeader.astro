@@ -1,0 +1,29 @@
+---
+import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from '../../languages';
+import { SITE } from '../../consts';
+
+// import SkipToContent from './SkipToContent.astro';
+// import SidebarToggle from './SidebarToggle';
+// import LanguageSelect from './LanguageSelect';
+
+
+type Props = {
+	currentPage?: string;
+};
+
+const { currentPage } = Astro.props;
+const lang = getLanguageFromURL(currentPage);
+---
+
+<header>
+	<p><strong>SOL</strong> CSS</p>
+
+	<nav title="Top Navigation">
+		<ul role="list">
+			<li><a href="/">Home</a></li>
+			<li><a href="/docs/en/intro">Docs</a></li>
+			<li><a href="/blog">Blog Example</a></li>
+			<li><a role="button" href="/contact">Contact</a></li>
+		</ul>
+	</nav>
+</header>

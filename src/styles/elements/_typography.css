@@ -68,14 +68,14 @@ cite::before {
 }
 
 
-a {
+:where(a) {
   color: var(--primary-color);
   text-underline-offset: 0.125em;
   word-break: break-word;
 }
 
-a:hover,
-a:focus-visible {
+:where(a:hover,
+a:focus-visible) {
   color: var(--primary-color-glare);
   text-decoration: none;
 }
