@@ -173,7 +173,7 @@ figure > figcaption {
   font-size: var(--font-size-xs);
 }
 
-article :where(h1, h2, h3) {
+article :where(h1, h2) {
   max-inline-size: var(--line-length-sm);
 }
 

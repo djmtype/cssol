@@ -1,0 +1,38 @@
+---
+title: "Space"
+description: "Documentation for spacing scale."
+---
+
+## Overview
+
+### Space Size
+
+The base space size utilizes a `clamp` function on the `html` element for better readability.
+
+```css
+:where(html) {
+  --space-size: clamp(1rem, calc(0.9rem + 0.3vw), 1.25rem);
+}
+```
+
+Providing a value for `--space-size-value` will override the initial setting located in `settings.css`.
+
+
+### Space Scale
+
+The default space scale is set to `1.25`. 
+
+Providing a value for `--space-scale-value` will override the initial setting located in `settings.css`. 
+
+An alias value of `--gutter` has also been provided as a means to provide consistency. Its default value is set to `--space-md`. 
+
+Providing a value for `--gutter-size` will override the initial `--gutter` value located in `settings.css`.
+
+---
+
+## Visual Space Scale
+
+<Component>
+  <Space />
+</Component>
+

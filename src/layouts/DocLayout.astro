@@ -1,48 +1,107 @@
 ---
-import type { MarkdownHeading } from 'astro';
-import type { CollectionEntry } from 'astro:content';
+import type { MarkdownHeading } from "astro"
+import type { CollectionEntry } from "astro:content"
 import BaseHead from "@components/Base/BaseHead.astro"
 import BaseSEO from "@components/Base/BaseSEO.astro"
-// import HeadSEO from '../components/HeadSEO.astro';
-import BaseHeader from '@components/Base/BaseHeader.astro';
-import PageContent from '@components/DocComponents/PageContent.astro';
-import LeftSidebar from '@components/DocComponents/LeftSidebar.astro';
-// import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
-// import Footer from '../components/Footer/Footer.astro';
-import { SITE } from '../consts';
 
-type Props = CollectionEntry<'docs'>['data'] & {
-	headings: MarkdownHeading[];
-};
+import BaseHeader from "@components/Base/BaseHeader.astro"
 
-const { headings, ...data } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const currentPage = Astro.url.pathname;
-const currentFile = `src/content/docs${currentPage.replace(/\/$/, '')}.md`;
+import PageContent from "@components/DocComponents/PageContent.astro"
+import LeftSidebar from "@components/DocComponents/LeftSidebar.astro"
+
+import { SITE } from "../consts"
+
+type Props = CollectionEntry<"docs">["data"] & {
+  headings: MarkdownHeading[]
+}
+
+const { headings, ...data } = Astro.props
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const currentPage = Astro.url.pathname
+const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.mdx`
 
 ---
 
 <html dir={data.dir} lang={data.lang}>
-	<head>
-		<BaseHead />
+  <head>
+    <BaseHead />
 
-		<BaseSEO {...data} canonicalUrl={canonicalURL} />
-		
-	</head>
+    <BaseSEO {...data} canonicalUrl={canonicalURL} />
+  </head>
 
-	<body>
-		<BaseHeader currentPage={currentPage} />
-		<main class="layout">
-			<aside id="grid-left" title="Site Navigation">
-				<LeftSidebar currentPage={currentPage} />
-			</aside>
-			<div>
-				<PageContent title={data.title} headings={headings}>
-					<slot />
-				</PageContent>
-			</div>
-		
-		</main>
-		<!-- <Footer path={currentFile} /> -->
-	</body>
+  <body>
+    <BaseHeader currentPage={currentPage} />
+    <main id="main-content">
+      <section>
+        <aside id="main-aside" title="Documentation Navigation">
+          <LeftSidebar currentPage={currentPage} />
+        </aside>
+
+        <PageContent title={data.title} headings={headings}>
+
+          <span id="fontSizeDisplay"></span>
+
+          <slot />
+        </PageContent>
+      </section>
+    </main>
+    
+  </body>
 </html>
+
+
+
+
+<style is:global>
+
+.container {
+    --base-value: 10px;
+    --multiplier: 2;
+    --custom-property: calc(var(--base-value) * var(--multiplier));
+  }
+
+
+  :where(html) {
+    --astro-code-color-background: var(--surface-color-glare);
+    --astro-code-token-string-expression: var(--primary-color);
+    --astro-code-color-text: var(--text-color);
+    --astro-code-token-comment: var(--text-color-muted);
+  }
+
+  span[style*="--astro-code-token-comment"] {
+    display: block;
+    width: 100%;
+  }
+
+  grid {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr));
+    align-items: start;
+    justify-items: start;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: var(--gutter);
+    @media (width >= 40rem) {
+      grid-template-columns: fit-content(30ch) minmax(min(50vw, 30ch), 1fr);
+    }
+  }
+
+  aside {
+    @media (width >= 40rem) {
+      align-self: start;
+      position: sticky;
+      top: var(--gutter);
+    }
+  }
+
+  aside nav ul ul {
+ 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12ch, 1fr));
+    }
+  
+</style>

@@ -11,6 +11,15 @@ module.exports = {
       },
     },
     {
+      files: "*.mdx",
+      options: {
+        singleQuote: false,
+        printWidth: 60,
+        bracketSameLine: true,
+        useTabs: false
+      },
+    },
+    {
       files: "*.astro",
       options: {
         parser: "astro",

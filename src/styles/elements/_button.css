@@ -11,17 +11,12 @@
 }
 
 
-
-/* :where(input[type="submit"]) {
-  justify-self: start;
-} */
-
 :where(button:not([class]),
 input[type="submit"]:not([class]),
 a[role="button"]:not(nav a[role="button"]):not([class])) {
   
-  background-color: var(--primary-color, buttonface);
-  border-color: var(--primary-color, buttonborder);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   color: var(--text-color-invert);
 }
 

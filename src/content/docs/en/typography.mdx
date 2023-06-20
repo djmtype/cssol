@@ -1,0 +1,52 @@
+---
+title: "Typography"
+description: "Documentation for typographical elements including typescale, headings, lists, inline elements, and blockquote."
+---
+
+## Overview
+
+### Font Size
+
+The base font size utilizes a `clamp` function on the `html` element for better readability.
+
+```css
+:where(html) {
+  --font-size: clamp(1rem, calc(0.9rem + 0.3vw), 1.25rem);
+}
+```
+
+Providing a value for `--font-size-value` will override the initial setting located in `settings.css`.
+
+### Typescale
+
+The default typescale is set to `1.25`, or *Major Third*.  
+[Check out other type scales](https://typescale.com/)
+
+Providing a value for `--font-scale-value` will override the initial setting located in `settings.css`. 
+
+---
+
+## Headings
+
+<Component>
+  <Headings />
+</Component>
+
+## Lists
+
+<Component>
+  <Lists />
+</Component>
+
+## Inline Text Elements
+
+<Component>
+  <InlineText />
+</Component>
+
+## Blockquote
+
+<Component>
+  <Blockquote />
+</Component>
+

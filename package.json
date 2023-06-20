@@ -12,9 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.19.2",
-    "@csstools/postcss-oklab-function": "^2.2.2",
-    "astro": "^2.5.2",
+    "@astrojs/mdx": "^0.19.7",
+    "@csstools/postcss-oklab-function": "^2.2.3",
+    "astro": "^2.6.4",
     "astro-auto-import": "^0.3.0",
     "cssnano-preset-lite": "^3.0.0",
     "postcss-combine-duplicated-selectors": "^10.0.3",
@@ -24,10 +24,10 @@
   },
   "devDependencies": {
     "cssnano": "^6.0.1",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.24",
     "postcss-cli": "^10.1.0",
-    "postcss-preset-env": "^8.4.1",
-    "prettier-plugin-astro": "^0.9.0"
+    "postcss-preset-env": "^8.5.0",
+    "prettier-plugin-astro": "^0.10.0"
   },
   "browserslist": [
     "defaults"

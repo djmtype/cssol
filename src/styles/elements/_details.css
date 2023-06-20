@@ -1,60 +1,82 @@
 details {
-	--details-inline-space: var(--space-lg);
-	padding: 0;
-	background-color: var(--surface-color);
-	border-radius: var(--border-radius-rounded);
-	border: var(--border-size-1) solid var(--separator-color);
-
-	
+  --details-inline-space: var(--space-lg);
+  padding: 0;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius-rounded);
+  border: var(--border-size-1) solid var(--separator-color);
+	position: relative;
 }
-
-
 
 details > summary {
-	--icon-size: .75rem;
-	position: relative;
-	color: var(--primary-color);
-	cursor: pointer;
-	padding: var(--space-3xs) var(--space-xs);
-
+  --icon-size: 0.75rem;
+  position: relative;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: var(--space-3xs) var(--space-xs);
 }
 
-
 details > * + * {
-	margin-top: var(--flow-space, 1.5em);
+  margin-top: var(--flow-space, 1.5em);
 }
 
 details > *:nth-child(2) {
-	--flow-space: var(--details-inline-space);
+  --flow-space: var(--details-inline-space);
 }
 
-
-
 details[open] {
-	padding: var(--details-inline-space);
-	background-color: var(--surface-color-glare);
+  padding: var(--details-inline-space);
+  background-color: var(--surface-color-glare);
 }
 
 details[open] > summary {
-	font-weight: var(--font-weight-bold);
-	border-bottom: var(--border-size-1) solid var(--separator-color);
-	color: var(--text-color);
+  font-weight: var(--font-weight-bold);
+  border-bottom: var(--border-size-1) solid var(--separator-color);
+  color: var(--text-color);
   margin-block-start: calc(-1 * var(--details-inline-space));
   margin-inline: calc(-1 * var(--details-inline-space));
 }
 
-
 summary {
-	&:hover, &:focus-visible {
-		color: var(--primary-color-glare);
-	}
+  &:hover,
+  &:focus-visible {
+    color: var(--primary-color-glare);
+  }
 }
 
 details > pre {
-	padding: 0;
+  padding: 0;
 }
 
 details > details {
-	background-color: var(--surface-color-glare);
-
+  background-color: var(--surface-color-glare);
 }
+
+
+
+/* details[role="list"][open] {
+  background: var(--surface-color-glare);
+  padding-block-end: 0;
+  border-radius: var(--border-radius-rounded) var(--border-radius-rounded) 0 0;
+}
+
+details > ul[role="listbox"] {
+  padding-block: var(--space-3xs);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: calc(-1 * var(--border-size-1));
+  top: auto;
+  background: var(--surface-color-glare);
+  margin-block-start: 0;
+  width: calc(100% + var(--border-size-1) * 2);
+  z-index: 99;
+  border: var(--border-size-1) solid var(--separator-color);
+  border-block-start: 0;
+  border-radius: 0 0 var(--border-radius-rounded) var(--border-radius-rounded);
+}
+
+details > ul[role="listbox"] a {
+  text-decoration: none;
+  display: flex;
+  padding: var(--space-3xs) var(--space-lg);
+} */

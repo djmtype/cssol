@@ -45,11 +45,11 @@ blockquote:not([class]) {
   border-left: var(--border-size-4) solid var(--primary-color);
 }
 
-:where(ul, ol):not([role="list"]) {
+:where(ul, ol):not([role="list"],[role="listbox"]) {
 	padding-inline-start: var(--item-inline-start);
 }
 
-:where(ul, ol):not([role="list"]) li::marker {
+:where(ul, ol):not([role="list"], [role="listbox"]) li::marker {
 	color: var(--primary-color, currentColor);
 }
 
@@ -156,6 +156,7 @@ code:not(pre > code) {
   padding: 0.125em 0.25em;
   border-radius: .125em;
   background-color: var(--surface-color-glare);
+  color: var(--primary-color);
 }
 
 dl {

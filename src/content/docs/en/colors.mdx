@@ -1,0 +1,20 @@
+---
+title: "Colors"
+description: "Default colors"
+---
+
+The color space being used by SOL is `oklch`. Why `oklch`? It's much easier to predict color contrast compared to using other color spaces like `rgb` or `hsl`.
+
+While all major browsers natively support `oklch`, it's important to support *all* browsers. Therefore, PostCSS is being utilized to generate fallback values for unsupported browsers. 
+ 
+In order for PostCSS to transform these values, the `oklch` function can not contain other css variables.
+
+❌ `--color-prop: oklch(99% .03 var(--hue))`  
+❌ `--color-prop: oklch(99% .03 var(--hue, 270))`  
+✅ `--color-prop: oklch(99% .03 270)`
+
+---
+
+## Swatches
+
+<ColorPalette />

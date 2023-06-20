@@ -1,12 +1,20 @@
 ---
 const html = await Astro.slots.render('default');
 import { Code } from 'astro/components';
+
+
+export interface Props {
+  openState?: boolean;
+}
+
+
+const { openState } = Astro.props as Props
+
 ---
 
 <Fragment set:html={html} />
-<details>
+<details open={openState ? "" : undefined}>
 <summary>HTML</summary>
 <Code code={html} lang="html" theme="css-variables" wrap />
 </details>
-
 

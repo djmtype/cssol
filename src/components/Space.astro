@@ -1,0 +1,96 @@
+<ul role="list">
+  <li>
+		<code>--space-3xs</code>
+	</li>
+  <li>
+		<code>--space-2xs</code>
+	</li>
+  <li>
+		<code>--space-xs</code>
+	</li>
+  <li>
+		<code>--space-sm</code>
+	</li>
+  <li>
+		<code>--space-md</code>
+	</li>
+  <li>
+		<code>--space-lg</code>
+	</li>
+  <li>
+		<code>--space-xl</code>
+	</li>
+  <li>
+		<code>--space-2xl</code>
+	</li>
+  <li>
+		<code>--space-3xl</code>
+	</li>
+  <li>
+		<code>--space-4xl</code>
+	</li>
+  <li>
+		<code>--gutter</code>
+	</li>
+</ul>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter);
+  }
+
+  li {
+    --item-size: var(--space-3xs);
+    position: relative;
+    display: flex;
+    align-items: start;
+    gap: var(--space-xs);
+  }
+
+  li::before {
+    content: "";
+    background-color: var(--primary-color);
+    height: 2rem;
+    width: var(--item-size);
+    display: inline-block;
+  }
+
+  li:nth-child(2) {
+    --item-size: var(--space-2xs);
+  }
+
+  li:nth-child(3) {
+    --item-size: var(--space-xs);
+  }
+
+  li:nth-child(4) {
+    --item-size: var(--space-sm);
+  }
+  li:nth-child(5) {
+    --item-size: var(--space-md);
+  }
+  li:nth-child(6) {
+    --item-size: var(--space-lg);
+  }
+
+  li:nth-child(7) {
+    --item-size: var(--space-xl);
+  }
+
+  li:nth-child(8) {
+    --item-size: var(--space-2xl);
+  }
+  li:nth-child(9) {
+    --item-size: var(--space-3xl);
+  }
+
+  li:nth-child(10) {
+    --item-size: var(--space-4xl);
+  }
+
+  li:nth-child(11) {
+    --item-size: var(--gutter);
+  }
+</style>

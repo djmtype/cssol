@@ -1,0 +1,110 @@
+---
+import fs from "fs"
+
+// Read the CSS file
+const cssStyles = fs.readFileSync("./src/styles/variables/_colors.css", "utf8")
+
+// Extract the style block contents
+const styleBlockRegex = /:where\(html\)\s*{([^}]+)}/
+const styleBlockMatch = cssStyles.match(styleBlockRegex)
+
+if (!styleBlockMatch) {
+  console.log("No style block found in the CSS file.")
+  return
+}
+
+const styleBlockContents = styleBlockMatch[1]
+
+// Extract the variable names and values
+const matches = styleBlockContents.match(/--([^:]+):([^;]+)/g)
+
+// Create an empty object to store the JSON
+const jsonObject = {}
+
+// Iterate over the matches and populate the JSON object
+for (const match of matches) {
+  const [variable, value] = match.split(":")
+  const name = variable.slice(2).trim() // Remove the leading "--" and trim any whitespace
+
+  const category = name.split("-")[1] // Extract the category name
+
+  if (!jsonObject[category]) {
+    jsonObject[category] = []
+  }
+
+  jsonObject[category].push({ name, value: value.trim() }) // Preserve the spaces within the value
+}
+
+const swatches = jsonObject;
+// console.log(JSON.stringify(jsonObject, null, 2));
+---
+
+{
+  Object.entries(swatches).map(([color, items]) => (
+    <div>
+      <h3>{color}</h3>
+      <ul role="list">
+        {items.map(({ name, value }) => (
+          <li>
+            <item style={"--swatch-color: var(--" + name + ")"} />
+            <p>
+              <strong>{"--" + name}</strong> <br />
+              <span>{value}</span>
+            </p>
+            
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))
+}
+
+<!-- <script is:inline>
+  function copyToClipboard(text) {
+    const textarea = document.createElement("textarea")
+    textarea.value = text
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand("copy")
+    document.body.removeChild(textarea)
+  }
+</script> -->
+<!-- <button onclick={`copyToClipboard('--' + '${name}')`}>Copy</button> -->
+
+<style>
+  div > * + * {
+    margin-top: 1.5em;
+  }
+  item {
+    --swatch-color: var(--color-gray-0);
+    display: inline-block;
+    width: 100%;
+    aspect-ratio: 1;
+    background: var(--swatch-color);
+    border: var(--border-size-1) solid var(--separator-color);
+  }
+
+  ul {
+    max-width: 100%;
+    overflow-x: auto;
+    display: grid;
+    grid-auto-flow: column;
+
+    gap: var(--gutter);
+    padding-block-end: var(--gutter);
+  }
+
+  ul > * {
+    width: min(15ch, 25vw);
+  }
+
+  li p {
+    font-size: var(--font-size-xs);
+    font-family: var(--font-family-mono);
+  }
+
+  li p span {
+    color: var(--text-color-muted);
+    font-size: var(--font-size-smaller);
+  }
+</style>

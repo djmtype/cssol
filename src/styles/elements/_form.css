@@ -8,6 +8,15 @@
   margin-top: var(--flow-space, 1em);
 }
 
+:where(fieldset) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+form label {
+  display: inline-block;
+}
+
 
 form > p {
   display: flex;

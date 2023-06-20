@@ -14,18 +14,17 @@ const langCode = getLanguageFromURL(currentPage);
 const sidebar = SIDEBAR[langCode];
 ---
 
-<nav aria-labelledby="grid-left">
-	<ul class="nav-groups">
+<nav aria-labelledby="main-aside">
+	<ul role="list">
 		{
 			Object.entries(sidebar).map(([header, children]) => (
 				<li>
-					<div class="nav-group">
-						<h2 class="nav-group-title">{header}</h2>
-						<ul>
+						<h2>{header}</h2>
+						<ul role='list'>
 							{children.map((child) => {
 								const url = Astro.site?.pathname + child.link;
 								return (
-									<li class="nav-link">
+									<li>
 										<a href={url} aria-current={currentPageMatch === child.link ? 'page' : false}>
 											{child.text}
 										</a>
@@ -33,7 +32,6 @@ const sidebar = SIDEBAR[langCode];
 								);
 							})}
 						</ul>
-					</div>
 				</li>
 			))
 		}
@@ -41,10 +39,39 @@ const sidebar = SIDEBAR[langCode];
 </nav>
 
 <script is:inline>
-	window.addEventListener('DOMContentLoaded', () => {
-		var target = document.querySelector('[aria-current="page"]');
-		if (target && target.offsetTop > window.innerHeight - 100) {
-			document.querySelector('.nav-groups').scrollTop = target.offsetTop;
-		}
-	});
+	// window.addEventListener('DOMContentLoaded', () => {
+	// 	var target = document.querySelector('[aria-current="page"]');
+	// 	if (target && target.offsetTop > window.innerHeight - 100) {
+	// 		document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+	// 	}
+	// });
 </script>
+
+
+<style>
+	h2 {
+		font-size: var(--font-size-sm);
+		font-weight: var(--font-weight-normal);
+		color: var(--text-color-muted);
+
+	
+	}
+
+	nav > ul > * + * {
+		margin-top: 1.5em;
+	}
+
+	a {
+		padding: .25ex var(--space-3xs);
+		display: block;
+	}
+
+	a[aria-current="page"] {
+		font-weight: var(--font-weight-bold);
+		color: var(--text-color);
+		cursor: default;
+		text-decoration: none;
+
+	}
+
+</style>

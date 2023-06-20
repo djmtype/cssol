@@ -1,0 +1,38 @@
+input[type="checkbox"][role="switch"] {
+	--switch-width: 2.25em;
+	--switch-height: 1.25em;
+	--border-size: var(--border-size-1);
+	appearance: none;
+	padding: 0;
+	display: inline-flex;
+	position: relative;
+	transform: translateY(0.125em);
+	width: var(--switch-width);
+	height: var(--switch-height);
+	border: var(--border-size) solid var(--separator-color);
+	border-radius: var(--border-radius-pill);
+	background-color: var(--surface-color-glare);
+}
+
+
+
+input[type="checkbox"][role="switch"]:before {
+	content: "";
+	display: block;
+	/* width: calc(1.25em - (var(--border-size) * 2)); */
+	aspect-ratio: 1;
+	height: calc(100% - var(--border-size) * 2);
+	border-radius: var(--border-radius-circle);
+	background-color: var(--text-color-muted);
+	transition: margin 0.1s ease-in-out;
+	transform: translate(var(--border-size), var(--border-size));
+}
+
+input[type="checkbox"][role="switch"]:checked {
+	background-color: var(--primary-color);
+}
+
+input[type="checkbox"][role="switch"]:checked::before {
+	margin-inline-start: calc(1.125em - var(--border-size) * 2);
+	background-color: var(--text-color);
+}

@@ -1,13 +1,16 @@
 :where(html) {
-  --space-scale: var(--space-ratio, 1.25);
 
-  --base-space-size: clamp(1rem, calc(0.91rem + 0.42vw), 1.25rem);
+  --space-size: var(--space-size-value, clamp(1rem, calc(0.9rem + 0.3vw), 1.25rem));
+
+  --space-scale: var(--space-scale-value, 1.25);
+
+
 
   --space-3xs: calc(var(--space-2xs) / var(--space-scale));
   --space-2xs: calc(var(--space-xs) / var(--space-scale));
-  --space-xs: calc(var(--base-space-size) / var(--space-scale));
+  --space-xs: calc(var(--space-size) / var(--space-scale));
 
-  --space-sm: var(--base-space-size);
+  --space-sm: var(--space-size);
   --space-md: calc(var(--space-sm) * var(--space-scale));
   --space-lg: calc(var(--space-md) * var(--space-scale));
   --space-xl: calc(var(--space-lg) * var(--space-scale));
@@ -15,5 +18,5 @@
   --space-3xl: calc(var(--space-2xl) * var(--space-scale));
   --space-4xl: calc(var(--space-3xl) * var(--space-scale));
 
-  --gutter: var(--gutter-width, var(--space-md));
+  --gutter: var(--gutter-size, var(--space-md));
 }

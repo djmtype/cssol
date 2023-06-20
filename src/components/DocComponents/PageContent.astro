@@ -11,12 +11,24 @@ type Props = {
 const { title, headings } = Astro.props;
 ---
 
-<article id="article" class="content">
-	<section class="main-section">
-		<h1 class="content-title" id="overview">{title}</h1>
 
+	<article>
+		<h1 id="overview">{title}</h1>
 		<slot />
-	</section>
+	</article>
 
-</article>
 
+	<style>
+		article {
+			align-self: start;
+			padding: unset;
+			background: unset;
+			box-shadow: unset;
+			width: 100%;
+		--section-items-space: 0;
+	}
+
+	h1 {
+		color: var(--primary-color);
+	}
+	</style>

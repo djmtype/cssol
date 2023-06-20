@@ -20,7 +20,7 @@ body {
   margin-block: 0;
 }
 
-:where(ul[role="list"], ol[role="list"]) {
+:where(ul[role="list"], ul[role="listbox"], ol[role="list"]) {
   padding: 0;
   margin: 0;
   list-style-type: none;

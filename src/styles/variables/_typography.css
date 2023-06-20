@@ -5,15 +5,15 @@
 	--font-family-mono: ui-monospace, SF Mono, Menlo, Monaco, monospace;
 
 
-  --font-scale: var(--font-ratio, 1.25);
+  --font-scale: var(--font-scale-value, 1.25);
 
-	--base-font-size: clamp(1.00rem, calc(0.90rem + 0.30vw), 1.25rem);
+	--font-size: var(--font-size-value, clamp(1.00rem, calc(0.90rem + 0.30vw), 1.25rem));
 
 	
 	
-	--font-size-xs: calc(var(--base-font-size) / var(--font-scale));
+	--font-size-xs: calc(var(--font-size) / var(--font-scale));
 
-  --font-size-sm: var(--base-font-size);
+  --font-size-sm: var(--font-size);
   --font-size-md: calc(var(--font-size-sm) * var(--font-scale));
   --font-size-lg: calc(var(--font-size-md) * var(--font-scale));
   --font-size-xl: calc(var(--font-size-lg) * var(--font-scale));
