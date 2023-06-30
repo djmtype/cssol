@@ -1,32 +1,29 @@
-body, h1, h2, h3, h4, p {
-	font-size: var(--font-size);
-}
 
 body {
-	--font-size: var(--font-size-sm);
+	font-size: var(--font-size-sm);
 }
 
 h1 {
-  --font-size: var(--font-size-3xl);
+  font-size: var(--font-size-3xl);
 }
 
 
 h2 {
-  --font-size: var(--font-size-2xl);
+  font-size: var(--font-size-2xl);
 }
 
 h3 {
-  --font-size: var(--font-size-xl);
+  font-size: var(--font-size-xl);
 
 }
 
 h4 {
-  --font-size: var(--font-size-lg);
+  font-size: var(--font-size-lg);
 
 }
 
 p {
-	--font-size: var(--font-size-sm);
+	font-size: var(--font-size-sm);
 }
 
 h1, h2, h3 {

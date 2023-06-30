@@ -67,20 +67,6 @@ textarea {
   }
 }
 :where(html) {
-  --hue-red: 25;
-  --hue-pink: 350;
-  --hue-purple: 310;
-  --hue-violet: 290;
-  --hue-indigo: 270;
-  --hue-blue: 240;
-  --hue-cyan: 210;
-  --hue-teal: 185;
-  --hue-green: 145;
-  --hue-lime: 125;
-  --hue-yellow: 100;
-  --hue-orange: 75;
-  --gray-chroma: 0;
-  --gray-hue: 0;
   --color-gray-0: #fcfcfc;
   --color-gray-1: #eee;
   --color-gray-2: #d7d7d7;
@@ -464,8 +450,8 @@ dd {
     input[type="submit"]:not([class]),
     a[role="button"]:not(nav a[role="button"]):not([class])
   ) {
-  background-color: var(--primary-color, buttonface);
-  border-color: var(--primary-color, buttonborder);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   color: var(--text-color-invert);
 }
 :where(
@@ -515,6 +501,14 @@ div[role="tablist"] > button:hover {
 :where(form:not([method="dialog"]) > * + *) {
   margin-top: var(--flow-space, 1em);
 }
+:where(fieldset) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+form label {
+  display: inline-block;
+}
 form > p {
   display: flex;
   align-items: center;
@@ -524,6 +518,9 @@ form > p {
 form > p > label:first-child {
   flex-basis: max-content;
   min-width: 12ch;
+}
+@svg-load arrow url(../assets/arrow.svg) {
+  fill: #fff;
 }
 :where(select) {
   --icon-size: 0.75rem;
@@ -535,7 +532,7 @@ form > p > label:first-child {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: var(--text-color-invert);
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='13' fill='none'%3E%3Cpath fill='%23fff' d='m8.478 12.844-8-12h16l-8 12Z'/%3E%3C/svg%3E");
+  background-image: svg-inline(arrow);
   background-size: var(--icon-size) auto;
   background-repeat: no-repeat;
   background-position: calc(100% - var(--icon-size)) 50%;
@@ -588,6 +585,38 @@ textarea:focus-visible {
 textarea {
   flex: 1 1 100%;
   width: 100%;
+}
+input[type="checkbox"][role="switch"] {
+  --switch-width: 2.25em;
+  --switch-height: 1.25em;
+  --border-size: var(--border-size-1);
+  appearance: none;
+  padding: 0;
+  display: inline-flex;
+  position: relative;
+  transform: translateY(0.125em);
+  width: var(--switch-width);
+  height: var(--switch-height);
+  border: var(--border-size) solid var(--separator-color);
+  border-radius: var(--border-radius-pill);
+  background-color: var(--surface-color-glare);
+}
+input[type="checkbox"][role="switch"]:before {
+  content: "";
+  display: block;
+  aspect-ratio: 1;
+  height: calc(100% - var(--border-size) * 2);
+  border-radius: var(--border-radius-circle);
+  background-color: var(--text-color-muted);
+  transition: margin 0.1s ease-in-out;
+  transform: translate(var(--border-size), var(--border-size));
+}
+input[type="checkbox"][role="switch"]:checked {
+  background-color: var(--primary-color);
+}
+input[type="checkbox"][role="switch"]:checked:before {
+  margin-inline-start: calc(1.125em - var(--border-size) * 2);
+  background-color: var(--text-color);
 }
 figure:has(table) {
   max-width: 100%;
@@ -1004,7 +1033,7 @@ figure > figcaption {
   color: var(--text-color-muted);
   font-size: var(--font-size-xs);
 }
-article :where(h1, h2, h3) {
+article :where(h1, h2) {
   max-inline-size: var(--line-length-sm);
 }
 article :where(h4, p, li, dt, dd) {
