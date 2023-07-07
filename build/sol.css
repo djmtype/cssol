@@ -17,7 +17,7 @@ body {
   line-height: 1.5;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
     Noto Sans, sans-serif;
-  --font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm);
   color: var(--text-color);
   background-color: var(--surface-color);
   display: flex;
@@ -287,28 +287,20 @@ textarea {
     --box-shadow-default: 0 0 2em 0 rgba(0, 0, 0, 0.439);
   }
 }
-body,
-h1,
-h2,
-h3,
-h4,
-p {
-  font-size: var(--font-size);
-}
 h1 {
-  --font-size: var(--font-size-3xl);
+  font-size: var(--font-size-3xl);
 }
 h2 {
-  --font-size: var(--font-size-2xl);
+  font-size: var(--font-size-2xl);
 }
 h3 {
-  --font-size: var(--font-size-xl);
+  font-size: var(--font-size-xl);
 }
 h4 {
-  --font-size: var(--font-size-lg);
+  font-size: var(--font-size-lg);
 }
 p {
-  --font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm);
 }
 h1,
 h2,
@@ -519,9 +511,6 @@ form > p > label:first-child {
   flex-basis: max-content;
   min-width: 12ch;
 }
-@svg-load arrow url(../assets/arrow.svg) {
-  fill: #fff;
-}
 :where(select) {
   --icon-size: 0.75rem;
   appearance: none;
@@ -532,7 +521,7 @@ form > p > label:first-child {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: var(--text-color-invert);
-  background-image: svg-inline(arrow);
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='13' fill='none'%3E%3Cpath fill='%23fff' d='m8.478 12.844-8-12h16l-8 12Z'/%3E%3C/svg%3E");
   background-size: var(--icon-size) auto;
   background-repeat: no-repeat;
   background-position: calc(100% - var(--icon-size)) 50%;
