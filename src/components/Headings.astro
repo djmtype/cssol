@@ -3,28 +3,8 @@
 <h3 id="heading-level-3">Heading Level 3</h3>
 <h4 id="heading-level-4">Heading Level 4</h4>
 
-<script is:inline>
-  function displayFontSize(headingId, fontSizeDisplayId) {
-    var heading = document.getElementById(headingId);
-    var style = window.getComputedStyle(heading);
-    var fontSize = parseFloat(style.getPropertyValue("font-size"));
-    var roundedFontSize = Math.round(fontSize);
-
-    var fontSizeDisplay = document.createElement("span");
-    fontSizeDisplay.id = fontSizeDisplayId;
-    fontSizeDisplay.innerHTML = "<code>" + roundedFontSize + "px</code>";
-
-    var wrapperDiv = document.createElement("div");
-    wrapperDiv.appendChild(heading.cloneNode(true));
-    wrapperDiv.appendChild(fontSizeDisplay);
-
-    heading.parentNode.replaceChild(wrapperDiv, heading);
-  }
-
-  displayFontSize("heading-level-1", "fontSizeDisplay1");
-  displayFontSize("heading-level-2", "fontSizeDisplay2");
-  displayFontSize("heading-level-3", "fontSizeDisplay3");
-  displayFontSize("heading-level-4", "fontSizeDisplay4");
+<script>
+ import "@scripts/headings.js"
 </script>
 
 

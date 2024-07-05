@@ -12,22 +12,23 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.19.7",
-    "@csstools/postcss-oklab-function": "^2.2.3",
-    "astro": "^2.6.4",
-    "astro-auto-import": "^0.3.0",
-    "cssnano-preset-lite": "^3.0.0",
+    "@astrojs/mdx": "^3.1.2",
+    "@csstools/postcss-oklab-function": "^3.0.17",
+    "astro": "^4.11.5",
+    "astro-auto-import": "^0.4.2",
+    "cssnano-preset-lite": "^4.0.1",
     "postcss-combine-duplicated-selectors": "^10.0.3",
-    "postcss-import": "^15.1.0",
-    "prettier": "^2.8.8",
-    "remark-unwrap-images": "^3.0.1"
+    "postcss-import": "^16.1.0",
+    "prettier": "^3.3.2",
+    "remark-unwrap-images": "^4.0.0"
   },
   "devDependencies": {
-    "cssnano": "^6.0.1",
-    "postcss": "^8.4.24",
-    "postcss-cli": "^10.1.0",
-    "postcss-preset-env": "^8.5.0",
-    "prettier-plugin-astro": "^0.10.0"
+    "@shikijs/transformers": "^1.10.1",
+    "cssnano": "^7.0.4",
+    "postcss": "^8.4.39",
+    "postcss-cli": "^11.0.0",
+    "postcss-preset-env": "^9.5.15",
+    "prettier-plugin-astro": "^0.14.0"
   },
   "browserslist": [
     "defaults"

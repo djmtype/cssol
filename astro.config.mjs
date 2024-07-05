@@ -7,6 +7,7 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   site: siteMeta.url,
+  compressHTML: false,
 
   integrations: [
     AutoImport({
@@ -48,9 +49,6 @@ export default defineConfig({
     remarkPlugins: [remarkUnwrapImages],
   },
 
-  experimental: {
-    assets: true,
-  },
   vite: {
     // plugins: [],
     // ssr: {

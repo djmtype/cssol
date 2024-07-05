@@ -1,5 +1,5 @@
 /*!
- * CSSol v0.5.10 (https://cssol.netlify.app)
+ * CSSol v0.5.10 (https://sol-css.netlify.app)
  * Copyright 2023 - Licensed under MIT
  */
 *,
@@ -10,18 +10,31 @@
 body {
   background-color: Canvas;
   color: CanvasText;
+  --csstools-color-scheme--dark: ;
   color-scheme: light dark;
   min-height: 100vh;
   min-height: 100dvh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-    Noto Sans, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    Noto Sans,
+    sans-serif;
   font-size: var(--font-size-sm);
   color: var(--text-color);
   background-color: var(--surface-color);
   display: flex;
   flex-direction: column;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    --csstools-color-scheme--dark: initial;
+  }
 }
 :where(body, h1, h2, h3, h4, p, figure, blockquote, dl, dd) {
   margin: 0;
@@ -83,12 +96,12 @@ textarea {
   --color-gray-13: #222;
   --color-gray-14: #121212;
   --color-gray-15: #030303;
-  --color-indigo-0: #f8fcff;
-  --color-indigo-1: #e6eeff;
-  --color-indigo-2: #cbdaff;
-  --color-indigo-3: #a3bbff;
-  --color-indigo-4: #89a5ff;
-  --color-indigo-5: #6f8eff;
+  --color-indigo-0: #fafcff;
+  --color-indigo-1: #e8eeff;
+  --color-indigo-2: #cddaff;
+  --color-indigo-3: #a4bbff;
+  --color-indigo-4: #8aa6ff;
+  --color-indigo-5: #718fff;
   --color-indigo-6: #5c7bff;
   --color-indigo-7: #4d69f4;
   --color-indigo-8: #425bdd;
@@ -99,10 +112,10 @@ textarea {
   --color-indigo-13: #080e3e;
   --color-indigo-14: #030425;
   --color-indigo-15: #010216;
-  --color-red-0: #fff8f7;
-  --color-red-1: #ffe7e4;
-  --color-red-2: #ffc5bf;
-  --color-red-3: #ff9e96;
+  --color-red-0: #fffbfa;
+  --color-red-1: #ffe9e6;
+  --color-red-2: #ffc8c3;
+  --color-red-3: #ffa098;
   --color-red-4: #ff7e77;
   --color-red-5: #f75d59;
   --color-red-6: #e94646;
@@ -110,42 +123,42 @@ textarea {
   --color-red-8: #c51d28;
   --color-red-9: #b31220;
   --color-red-10: #940015;
-  --color-red-11: #74000c;
-  --color-red-12: #500005;
-  --color-red-13: #330002;
-  --color-red-14: #1c0000;
-  --color-red-15: #100;
-  --color-yellow-0: #fffdeb;
+  --color-red-11: #73000d;
+  --color-red-12: #4f0006;
+  --color-red-13: #320003;
+  --color-red-14: #1b0001;
+  --color-red-15: #100000;
+  --color-yellow-0: #fffdec;
   --color-yellow-1: #f7f0c2;
   --color-yellow-2: #eada78;
   --color-yellow-3: #d3bf46;
   --color-yellow-4: #c2ac00;
   --color-yellow-5: #ad9900;
-  --color-yellow-6: #9d8a00;
-  --color-yellow-7: #8d7b00;
-  --color-yellow-8: #7d6c00;
-  --color-yellow-9: #716100;
-  --color-yellow-10: #5b4d00;
+  --color-yellow-6: #9c8a00;
+  --color-yellow-7: #8b7b00;
+  --color-yellow-8: #7b6c00;
+  --color-yellow-9: #6e6100;
+  --color-yellow-10: #584d00;
   --color-yellow-11: #443b00;
   --color-yellow-12: #2d2700;
-  --color-yellow-13: #1b1600;
-  --color-yellow-14: #0d0900;
+  --color-yellow-13: #1a1600;
+  --color-yellow-14: #0c0900;
   --color-yellow-15: #060400;
-  --color-green-0: #f3fff3;
+  --color-green-0: #f5fff5;
   --color-green-1: #d6fad6;
   --color-green-2: #a5eda6;
   --color-green-3: #81d584;
   --color-green-4: #61c568;
   --color-green-5: #33b544;
   --color-green-6: #00a62c;
-  --color-green-7: #009425;
-  --color-green-8: #008419;
-  --color-green-9: #071;
-  --color-green-10: #006004;
-  --color-green-11: #00490c;
-  --color-green-12: #003104;
-  --color-green-13: #001d01;
-  --color-green-14: #000e00;
+  --color-green-7: #009427;
+  --color-green-8: #008321;
+  --color-green-9: #00751d;
+  --color-green-10: #005e15;
+  --color-green-11: #00480e;
+  --color-green-12: #003007;
+  --color-green-13: #001d03;
+  --color-green-14: #000d01;
   --color-green-15: #000700;
   --warning-text-color: var(--color-yellow-9);
   --alarm-text-color: var(--color-red-10);
@@ -219,49 +232,94 @@ textarea {
   accent-color: var(--primary-color);
   block-size: 100%;
 }
-@supports (color: color(display-p3 0 0 0)) {
+@supports (color: color(display-p3 0 0 0%)) {
   :where(html) {
-    --color-indigo-0: color(display-p3 0.97396 0.98613 1);
-    --color-indigo-1: color(display-p3 0.90899 0.93271 1);
-    --color-indigo-2: color(display-p3 0.80681 0.85184 1);
-    --color-indigo-3: color(display-p3 0.64356 0.72446 1);
-    --color-indigo-4: color(display-p3 0.54972 0.64015 1);
-    --color-indigo-5: color(display-p3 0.4539 0.55008 1);
-    --color-indigo-6: color(display-p3 0.38616 0.47827 0.97091);
-    --color-red-0: color(display-p3 1 0.97509 0.96881);
-    --color-red-1: color(display-p3 1 0.8984 0.88069);
-    --color-red-2: color(display-p3 1 0.76887 0.73753);
-    --color-red-3: color(display-p3 0.98877 0.61797 0.5783);
-    --color-red-4: color(display-p3 0.93816 0.52054 0.48195);
-    --color-red-11: color(display-p3 0.42036 0.04083 0.06393);
-    --color-red-12: color(display-p3 0.29303 0.00831 0.02581);
-    --color-red-13: color(display-p3 0.18521 0.00188 0.0097);
-    --color-red-14: color(display-p3 0.10105 0 0.00243);
-    --color-red-15: color(display-p3 0.05918 0.00011 0.00151);
-    --color-yellow-0: color(display-p3 1 0.9912 0.92016);
-    --color-yellow-4: color(display-p3 0.74908 0.67622 0.18517);
-    --color-yellow-5: color(display-p3 0.6782 0.60133 0);
-    --color-yellow-6: color(display-p3 0.61568 0.54075 0);
-    --color-yellow-7: color(display-p3 0.55369 0.4814 0);
-    --color-yellow-8: color(display-p3 0.48574 0.42491 0);
-    --color-yellow-9: color(display-p3 0.43129 0.38083 0);
-    --color-yellow-10: color(display-p3 0.34808 0.30407 0);
-    --color-yellow-11: color(display-p3 0.26818 0.23042 0);
-    --color-yellow-12: color(display-p3 0.17974 0.1511 0);
-    --color-yellow-13: color(display-p3 0.10657 0.08657 0);
-    --color-yellow-14: color(display-p3 0.04695 0.03604 0);
-    --color-yellow-15: color(display-p3 0.02543 0.01695 0);
-    --color-green-0: color(display-p3 0.96206 1 0.95574);
-    --color-green-6: color(display-p3 0.285 0.64156 0.24595);
-    --color-green-7: color(display-p3 0.19932 0.58355 0.15964);
-    --color-green-8: color(display-p3 0.15295 0.51857 0.11544);
-    --color-green-9: color(display-p3 0.12029 0.46685 0.08451);
-    --color-green-10: color(display-p3 0.06884 0.37787 0.03521);
-    --color-green-11: color(display-p3 0.01739 0.29226 0);
-    --color-green-12: color(display-p3 0.00651 0.19629 0);
-    --color-green-13: color(display-p3 0.0015 0.11798 0);
-    --color-green-14: color(display-p3 0.0004 0.05581 0);
-    --color-green-15: color(display-p3 0.00009 0.02813 0);
+    --color-indigo-0: #fafcff;
+    --color-indigo-1: #e8eeff;
+    --color-indigo-2: #cddaff;
+    --color-indigo-3: #a4bbff;
+    --color-indigo-4: #8aa6ff;
+    --color-indigo-5: #718fff;
+    --color-indigo-6: #5c7bff;
+    --color-red-0: #fffbfa;
+    --color-red-1: #ffe9e6;
+    --color-red-2: #ffc8c3;
+    --color-red-3: #ffa098;
+    --color-red-4: #ff7e77;
+    --color-red-11: #73000d;
+    --color-red-12: #4f0006;
+    --color-red-13: #320003;
+    --color-red-14: #1b0001;
+    --color-red-15: #100000;
+    --color-yellow-0: #fffdec;
+    --color-yellow-4: #c2ac00;
+    --color-yellow-5: #ad9900;
+    --color-yellow-6: #9c8a00;
+    --color-yellow-7: #8b7b00;
+    --color-yellow-8: #7b6c00;
+    --color-yellow-9: #6e6100;
+    --color-yellow-10: #584d00;
+    --color-yellow-11: #443b00;
+    --color-yellow-12: #2d2700;
+    --color-yellow-13: #1a1600;
+    --color-yellow-14: #0c0900;
+    --color-yellow-15: #060400;
+    --color-green-0: #f5fff5;
+    --color-green-6: #00a62c;
+    --color-green-7: #009427;
+    --color-green-8: #008321;
+    --color-green-9: #00751d;
+    --color-green-10: #005e15;
+    --color-green-11: #00480e;
+    --color-green-12: #003007;
+    --color-green-13: #001d03;
+    --color-green-14: #000d01;
+    --color-green-15: #000700;
+  }
+  @media (color-gamut: p3) {
+    :where(html) {
+      --color-indigo-0: color(display-p3 0.98243 0.98663 1);
+      --color-indigo-1: color(display-p3 0.91238 0.93303 1);
+      --color-indigo-2: color(display-p3 0.80817 0.85206 1);
+      --color-indigo-3: color(display-p3 0.65421 0.72799 1);
+      --color-indigo-4: color(display-p3 0.55366 0.64199 1);
+      --color-indigo-5: color(display-p3 0.45552 0.55119 1);
+      --color-indigo-6: color(display-p3 0.38616 0.47827 0.97091);
+      --color-red-0: color(display-p3 1 0.98196 0.9793);
+      --color-red-1: color(display-p3 1 0.90889 0.89586);
+      --color-red-2: color(display-p3 1 0.77602 0.74685);
+      --color-red-3: color(display-p3 0.98877 0.61797 0.5783);
+      --color-red-4: color(display-p3 0.93816 0.52054 0.48195);
+      --color-red-11: color(display-p3 0.42036 0.04083 0.06393);
+      --color-red-12: color(display-p3 0.29303 0.00831 0.02581);
+      --color-red-13: color(display-p3 0.18521 0.00188 0.0097);
+      --color-red-14: color(display-p3 0.09964 0 0.00299);
+      --color-red-15: color(display-p3 0.05918 0.00011 0.00151);
+      --color-yellow-0: color(display-p3 1 0.9911 0.92178);
+      --color-yellow-4: color(display-p3 0.74908 0.67622 0.18517);
+      --color-yellow-5: color(display-p3 0.6769 0.60156 0);
+      --color-yellow-6: color(display-p3 0.61026 0.54178 0);
+      --color-yellow-7: color(display-p3 0.54493 0.48318 0);
+      --color-yellow-8: color(display-p3 0.481 0.42582 0);
+      --color-yellow-9: color(display-p3 0.43092 0.3809 0);
+      --color-yellow-10: color(display-p3 0.34575 0.3045 0);
+      --color-yellow-11: color(display-p3 0.26408 0.23124 0);
+      --color-yellow-12: color(display-p3 0.17569 0.15194 0);
+      --color-yellow-13: color(display-p3 0.10353 0.08721 0);
+      --color-yellow-14: color(display-p3 0.0465 0.03612 0);
+      --color-yellow-15: color(display-p3 0.02274 0.01752 0);
+      --color-green-0: color(display-p3 0.9667 1 0.96154);
+      --color-green-6: color(display-p3 0.285 0.64156 0.24595);
+      --color-green-7: color(display-p3 0.19932 0.58355 0.15964);
+      --color-green-8: color(display-p3 0.15295 0.51857 0.11544);
+      --color-green-9: color(display-p3 0.12029 0.46685 0.08451);
+      --color-green-10: color(display-p3 0.06884 0.37787 0.03521);
+      --color-green-11: color(display-p3 0.01846 0.29216 0);
+      --color-green-12: color(display-p3 0.00847 0.19598 0);
+      --color-green-13: color(display-p3 0.00344 0.11748 0);
+      --color-green-14: color(display-p3 0.00118 0.05543 0);
+      --color-green-15: color(display-p3 0.00057 0.02784 0);
+    }
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -521,14 +579,14 @@ form > p > label:first-child {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: var(--text-color-invert);
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='13' fill='none'%3E%3Cpath fill='%23fff' d='m8.478 12.844-8-12h16l-8 12Z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='13' fill='none' viewBox='0 0 17 13'%3E%3Cpath fill='%23fff' d='m8.478 12.844-8-12h16z'/%3E%3C/svg%3E");
   background-size: var(--icon-size) auto;
   background-repeat: no-repeat;
   background-position: calc(100% - var(--icon-size)) 50%;
 }
 @media (prefers-color-scheme: dark) {
   :where(select) {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='13' fill='none'%3E%3Cpath fill='%23000' d='m8.478 12.844-8-12h16l-8 12Z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='13' fill='none' viewBox='0 0 17 13'%3E%3Cpath fill='%23000' d='m8.478 12.844-8-12h16z'/%3E%3C/svg%3E");
   }
 }
 :where(select):focus-visible,
