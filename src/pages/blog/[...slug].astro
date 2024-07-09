@@ -1,11 +1,11 @@
 ---
-import BreadcrumbNav from "@components/BreadcrumbNav.astro"
+import BreadcrumbNav from "@/components/BreadcrumbNav.astro"
 
-import Post from "@components/Post.astro"
-import { formatDate } from "@utilities/index"
-import Layout from "@layouts/Layout.astro"
+import Post from "@/components/Post.astro"
+import { formatDate } from "@/utilities/index"
+import Layout from "@/layouts/Layout.astro"
 
-import { getCollection, CollectionEntry } from "astro:content"
+import { getCollection, type CollectionEntry } from "astro:content"
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog")

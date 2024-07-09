@@ -1,0 +1,12 @@
+@layer base, theme, components, layout, utilities;
+@import "tailwindcss/theme" layer(theme);
+@import "./tw.config.css" layer(theme);
+@import "../cobalt/tokens/output/tokens.css" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
+
+/* @import "tailwindcss/theme" layer(theme); */
+
+/* @import "tailwindcss/utilities" layer(utilities); */
+
+
+

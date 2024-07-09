@@ -1,7 +1,7 @@
 ---
-import BaseHead from "@components/Base/BaseHead.astro"
-import BaseSEO from "@components/Base/BaseSEO.astro"
-import BaseHeader from "@components/Base/BaseHeader.astro"
+import BaseHead from "@/components/Base/BaseHead.astro"
+import BaseSEO from "@/components/Base/BaseSEO.astro"
+import BaseHeader from "@/components/Base/BaseHeader.astro"
 
 import { SITE } from "../consts"
 
@@ -24,6 +24,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
   </head>
   <body>
     <BaseHeader currentPage={currentPage} />
+    <div class="peacock">I am peacock</div>
     <main id="main-content">
       <slot />
     </main>
@@ -47,3 +48,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     </style>
   </body>
 </html>
+
+<style>
+  :root {
+    --color-primitive-mauve-3: color(srgb 0.8823529411764706 0.11372549019607843 0.2823529411764706)
+  }
+
+  .peacock {
+    height: 600px;
+    width: 600px;
+    background-color: var(--color-primitive-mauve-3);
+  }
+</style>

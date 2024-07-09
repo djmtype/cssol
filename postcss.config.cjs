@@ -2,11 +2,13 @@ const postcssPresetEnv = require("postcss-preset-env");
 const cssnano = require("cssnano");
 const postcssImport = require("postcss-import");
 const combineSelectors  = require('postcss-combine-duplicated-selectors');
+const tw = require('@tailwindcss/postcss')
 
 // const postcssOKLabFunction = require('@csstools/postcss-oklab-function');
 
 module.exports = {
   plugins: [
+    
     postcssImport(),
     
     // postcssOKLabFunction({ 
@@ -45,7 +47,7 @@ module.exports = {
       },
       
     }),
-
+    tw(),
     combineSelectors(),
     cssnano({
       preset: 'default'
