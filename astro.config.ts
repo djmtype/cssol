@@ -1,8 +1,10 @@
 import { defineConfig } from "astro/config";
+import viteConfig from './vite.config';
 import { siteMeta } from "./src/app.config";
 import remarkUnwrapImages from "remark-unwrap-images";
 import AutoImport from "astro-auto-import";
 import mdx from "@astrojs/mdx";
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -49,13 +51,5 @@ export default defineConfig({
     remarkPlugins: [remarkUnwrapImages],
   },
 
-  vite: {
-    // plugins: [],
-    // ssr: {
-    //   external: ["svgo"],
-    // },
-    css: {
-      devSourcemap: true,
-    },
-  },
+  vite: viteConfig,
 });

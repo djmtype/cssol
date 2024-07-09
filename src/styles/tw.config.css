@@ -7,7 +7,7 @@
 @theme {
   --default-*: initial;
   --breakpoint-*: initial;
-  --color-*: initial;
+  /* --color-*: initial; */
 
   /* --color-neutral-*: initial;
   --color-stone-*: initial; */

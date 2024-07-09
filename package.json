@@ -3,22 +3,19 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "build:css": "NODE_ENV=development postcss src/styles/app.css --config compile/postcss.config.cjs --output build/sol.css && prettier --write build/sol.css",
-    "build:cssprod": "NODE_ENV=production postcss src/styles/app.css --config compile/postcss.config.cjs --output build/sol.min.css",
+    "build:css": "NODE_ENV=development lightningcss --bundle src/styles/app.css -o build/sol.css",
+    "build:cssprod": "NODE_ENV=production lightningcss --minify --bundle src/styles/app.css -o build/sol.min.css",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && npm run build:css && npm run build:cssprod",
     "preview": "astro preview",
-    "astro": "astro",
-    "tz": "tz build",
-    "co": "co build",
-    "modify-tokens": "node modify-tokens.mjs",
-    "tokens:build": "npm run co && npm run modify-tokens"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.2",
     "@csstools/postcss-oklab-function": "^3.0.19",
     "@tailwindcss/postcss": "4.0.0-alpha.17",
+    "@tailwindcss/vite": "4.0.0-alpha.17",
     "astro": "^4.11.5",
     "astro-auto-import": "^0.4.2",
     "change-case": "^5.4.4",
@@ -27,21 +24,17 @@
     "postcss-import": "^16.1.0",
     "prettier": "^3.3.2",
     "remark-unwrap-images": "^4.0.0",
-    "tailwindcss": "4.0.0-alpha.17"
+    "tailwindcss": "4.0.0-alpha.17",
+    "lightningcss": "^1.25.1"
   },
   "devDependencies": {
-    "@cobalt-ui/cli": "^1.11.2",
-    "@cobalt-ui/plugin-css": "^1.7.4",
-    "@cobalt-ui/plugin-js": "^1.4.4",
     "@shikijs/transformers": "^1.10.3",
-    "@terrazzo/cli": "^0.0.10",
-    "@terrazzo/plugin-css": "^0.0.5",
-    "@terrazzo/plugin-js": "^0.0.0",
     "cssnano": "^7.0.4",
     "postcss": "^8.4.39",
     "postcss-cli": "^11.0.0",
     "postcss-preset-env": "^9.6.0",
-    "prettier-plugin-astro": "^0.14.0"
+    "prettier-plugin-astro": "^0.14.0",
+    "vite": "^5.3.3"
   },
   "browserslist": [
     "defaults"
